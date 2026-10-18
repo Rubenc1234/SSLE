@@ -2,7 +2,9 @@
 import os
 import time
 import random
+import threading
 import requests
+
 
 # --------------------------------------------------
 # CONFIGURATION
@@ -13,30 +15,117 @@ REGISTRY_URL = os.environ.get(
     "http://localhost:5050"
 ).rstrip("/")
 
-INGESTION_URL = os.environ.get(
-    "INGESTION_URL",
-    "http://localhost:5001"
-).rstrip("/")
-
 DEVICE_ID = os.environ.get(
     "DEVICE_ID",
-    "sensor-pt-cen-dc1-r02-n03"
+    "sensor-pt-aveiro-dc1-r01-n01"
 )
 
 SENSOR_INTERVAL = float(
     os.environ.get("SENSOR_INTERVAL", "5")
 )
 
+SERVICE_TYPE = "sensor"
+
+COUNTRY = os.environ.get("COUNTRY", "pt")
+REGION = os.environ.get("REGION", "aveiro")
+DC = os.environ.get("DC", "dc1")
+RACK = os.environ.get("RACK", "r01")
+NODE = os.environ.get("NODE", "node1")
+
 REGISTRY_TIMEOUT = 3
 INGESTION_TIMEOUT = 5
+
+HEARTBEAT_INTERVAL = 5
+DISCOVERY_CACHE_TTL = 10
 
 MIN_TEMPERATURE = 20.0
 MAX_TEMPERATURE = 30.0
 
+
 # Cache do endereço do Ingestion
 cached_ingestion_url = None
 last_discovery_time = 0
-DISCOVERY_CACHE_TTL = 10
+
+
+# --------------------------------------------------
+# REGISTRATION AND HEARTBEAT
+# --------------------------------------------------
+
+def register():
+    """
+    Regista o sensor no Registry com os seus metadados.
+    O sensor não disponibiliza um servidor HTTP próprio.
+    """
+    payload = {
+        "service_id": DEVICE_ID,
+        "name": "sensor",
+        "url": "none",
+        "type": SERVICE_TYPE,
+        "country": COUNTRY,
+        "region": REGION,
+        "dc": DC,
+        "rack": RACK,
+        "node": NODE
+    }
+
+    try:
+        response = requests.post(
+            f"{REGISTRY_URL}/register",
+            json=payload,
+            timeout=REGISTRY_TIMEOUT
+        )
+
+        response.raise_for_status()
+
+        print("Sensor registado no Registry:", DEVICE_ID)
+        return True
+
+    except requests.RequestException as e:
+        print("Erro no registo do sensor:", e)
+        return False
+
+
+def heartbeat():
+    """
+    Mantém o registo do sensor ativo.
+    Se o Registry deixar de reconhecer o sensor,
+    tenta registá-lo novamente.
+    """
+    registered = False
+
+    while True:
+        try:
+            if not registered:
+                registered = register()
+
+                if not registered:
+                    time.sleep(HEARTBEAT_INTERVAL)
+                    continue
+
+            response = requests.post(
+                f"{REGISTRY_URL}/heartbeat",
+                json={"service_id": DEVICE_ID},
+                timeout=REGISTRY_TIMEOUT
+            )
+
+            if response.status_code == 404:
+                print(
+                    "Registry perdeu o sensor. "
+                    "A registar novamente..."
+                )
+                registered = register()
+
+            elif not response.ok:
+                print(
+                    "Heartbeat falhou:",
+                    response.status_code,
+                    response.text
+                )
+
+        except requests.RequestException as e:
+            print("Erro no heartbeat:", e)
+
+        time.sleep(HEARTBEAT_INTERVAL)
 
 
 # --------------------------------------------------
@@ -45,8 +134,8 @@ DISCOVERY_CACHE_TTL = 10
 
 def discover_ingestion():
     """
-    Descobre o serviço Ingestion através do Registry.
-    Mantém o último endereço conhecido para tolerar
+    Descobre o Ingestion através do Registry.
+    Guarda o último URL conhecido para tolerar
     falhas temporárias do Registry.
     """
     global cached_ingestion_url, last_discovery_time
@@ -78,17 +167,21 @@ def discover_ingestion():
 
         return cached_ingestion_url
 
-    except (requests.RequestException, ValueError, RuntimeError) as e:
-        print(f"Erro ao descobrir Ingestion: {e}")
+    except (
+        requests.RequestException,
+        ValueError,
+        RuntimeError
+    ) as e:
+        print("Erro ao descobrir Ingestion:", e)
 
         if cached_ingestion_url:
-            print("A utilizar o último endereço conhecido.")
+            print("A utilizar o último URL conhecido.")
             return cached_ingestion_url
 
-        # Permite tentar novamente na próxima iteração.
         last_discovery_time = 0
+
         raise RuntimeError(
-            "Não foi possível descobrir o serviço Ingestion"
+            "Não foi possível descobrir o Ingestion"
         ) from e
 
 
@@ -98,11 +191,15 @@ def discover_ingestion():
 
 def read_temperature():
     """
-    Simula a leitura de um sensor de temperatura.
-    Substituir por uma leitura real quando existir hardware.
+    Simula uma leitura do sensor.
+    Substituir por uma leitura de hardware real,
+    se necessário.
     """
     return round(
-        random.uniform(MIN_TEMPERATURE, MAX_TEMPERATURE),
+        random.uniform(
+            MIN_TEMPERATURE,
+            MAX_TEMPERATURE
+        ),
         2
     )
 
@@ -113,9 +210,8 @@ def read_temperature():
 
 def send_temperature(temperature):
     """
-    Envia uma leitura ao Ingestion.
-    Só considera o envio bem-sucedido se o serviço
-    responder com um código HTTP de sucesso.
+    Envia uma leitura ao Ingestion e verifica
+    se o pedido foi aceite.
     """
     global cached_ingestion_url, last_discovery_time
 
@@ -141,11 +237,10 @@ def send_temperature(temperature):
             return True
 
         print(
-            f"Ingestion rejeitou o pedido: "
-            f"HTTP {response.status_code} - {response.text}"
+            f"Ingestion respondeu HTTP {response.status_code}: "
+            f"{response.text}"
         )
 
-        # Se o serviço estiver indisponível, força nova descoberta.
         if response.status_code >= 500:
             cached_ingestion_url = None
             last_discovery_time = 0
@@ -153,9 +248,8 @@ def send_temperature(temperature):
         return False
 
     except (requests.RequestException, RuntimeError) as e:
-        print(f"Falha ao enviar temperatura: {e}")
+        print("Falha ao enviar temperatura:", e)
 
-        # Voltar a descobrir o Ingestion na próxima tentativa.
         cached_ingestion_url = None
         last_discovery_time = 0
 
@@ -163,7 +257,7 @@ def send_temperature(temperature):
 
 
 # --------------------------------------------------
-# MAIN LOOP WITH BACKOFF
+# MAIN LOOP
 # --------------------------------------------------
 
 def main():
@@ -171,11 +265,23 @@ def main():
         raise ValueError("DEVICE_ID não pode estar vazio")
 
     if SENSOR_INTERVAL <= 0:
-        raise ValueError("SENSOR_INTERVAL tem de ser maior que zero")
+        raise ValueError(
+            "SENSOR_INTERVAL tem de ser maior que zero"
+        )
 
     print(f"Sensor iniciado: {DEVICE_ID}")
     print(f"Registry: {REGISTRY_URL}")
     print(f"Intervalo: {SENSOR_INTERVAL} segundos")
+    print(
+        f"Localização: {COUNTRY}/{REGION}/"
+        f"{DC}/{RACK}/{NODE}"
+    )
+
+    # Inicia o registo e o heartbeat em segundo plano.
+    threading.Thread(
+        target=heartbeat,
+        daemon=True
+    ).start()
 
     failure_delay = 1
     max_failure_delay = 30
@@ -186,11 +292,13 @@ def main():
         if send_temperature(temperature):
             failure_delay = 1
             time.sleep(SENSOR_INTERVAL)
+
         else:
             print(
                 f"Nova tentativa em {failure_delay} segundos..."
             )
             time.sleep(failure_delay)
+
             failure_delay = min(
                 failure_delay * 2,
                 max_failure_delay
