@@ -28,6 +28,8 @@ deploy() {
     incus exec "$name" -- systemctl is-system-running --wait >/dev/null 2>&1 || true
 
     # Criar o ficheiro de env do serviço -> /etc/ssle/env
+    # Criar o ficheiro de env do serviço localmente e enviá-lo
+    local env_file="/tmp/ssle_env_$name"
     {
         echo "SERVICE_NAME=${type}-service"
         echo "SERVICE_ID=$name"
@@ -43,7 +45,13 @@ deploy() {
         echo "DB_PATH=/var/lib/ssle/temp_data.db"
         echo "PYTHONUNBUFFERED=1"
         [ -n "${EXTRA_ENV:-}" ] && echo "$EXTRA_ENV"
-    } | incus exec "$name" -- tee /etc/ssle/env >/dev/null
+    } > "$env_file"
+
+    incus file push "$env_file" "$name/etc/ssle/env"
+    rm -f "$env_file"
+
+    incus exec "$name" -- mkdir -p /var/log/ssle
+    incus exec "$name" -- chown -R ssle:ssle /var/log/ssle
 
     # Copiar para o contentor todos os ficheiros indicados nos argumentos
     # incus file push "$ROOT/services/serviceRegistry.py" \ registry-pt-aveiro-dc1-r01-n01/opt/ssle/

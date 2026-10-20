@@ -1,12 +1,12 @@
 import requests
 import sys
 import time
+import os
 
-
-REGISTRY = "http://localhost:5050"
-INGESTION = "http://localhost:5001"
-STORAGE = "http://localhost:5002"
-ANALYTICS = "http://localhost:5003"
+REGISTRY = os.environ.get("REGISTRY", "http://localhost:5050")
+INGESTION = os.environ.get("INGESTION", "http://localhost:5001")
+STORAGE = os.environ.get("STORAGE", "http://localhost:5002")
+ANALYTICS = os.environ.get("ANALYTICS", "http://localhost:5003")
 
 
 def check(name, condition):
