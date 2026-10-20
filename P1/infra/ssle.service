@@ -1,0 +1,18 @@
+[Unit]
+Description=SSLE service
+After=network.target
+
+[Service]
+User=ssle
+EnvironmentFile=/etc/ssle/env
+WorkingDirectory=/opt/ssle
+StateDirectory=ssle
+LogsDirectory=ssle
+ExecStart=@EXEC@
+StandardOutput=append:/var/log/ssle/access.log
+StandardError=append:/var/log/ssle/access.log
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
