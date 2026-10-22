@@ -181,6 +181,11 @@ def store():
             "error": "Missing JSON body"
         }), 400
 
+    if not isinstance(data, dict):
+        return jsonify({
+            "error": "JSON body must be an object"
+        }), 400
+
     device_id = data.get("device_id")
     temperature = data.get("temperature")
 

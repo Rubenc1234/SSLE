@@ -139,6 +139,12 @@ def heartbeat():
 # STORAGE DISCOVERY
 # --------------------------------------------------
 
+def invalidate_storage_cache():
+    global _storage_url, _storage_url_time
+    with _storage_cache_lock:
+        _storage_url = None
+        _storage_url_time = 0.0
+
 def discover_storage():
     global _storage_url, _storage_url_time
 
@@ -252,6 +258,14 @@ def ingest():
             timeout=REQUEST_TIMEOUT
         )
 
+        # Se for erro do servidor (>= 500), invalidamos a cache para forçar novo discovery
+        if response.status_code >= 500:
+            invalidate_storage_cache()
+            return jsonify({
+                "error": "Storage server error",
+                "storage_status": response.status_code
+            }), 502
+
         if response.status_code != 200:
             return jsonify({
                 "error": "Storage failed",
@@ -259,6 +273,8 @@ def ingest():
             }), 502
 
     except (requests.RequestException, RuntimeError) as e:
+        # Se houver falha de rede/exceção, invalidamos a cache imediatamente
+        invalidate_storage_cache()
         return jsonify({
             "error": str(e)
         }), 503
