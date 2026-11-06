@@ -5,7 +5,19 @@ import threading
 import time
 import random
 
+# metrics
+from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
+from monitoring.middleware import instrument_app
+
+from monitoring.metrics import (
+    increment_registry_registration,
+    increment_registry_overwrite,
+    update_registry_entries_per_name,
+)
+
 app = Flask(__name__)
+
+instrument_app(app)
 
 # --------------------------------------------------
 # CONFIGURATION
@@ -16,6 +28,7 @@ CLEANUP_INTERVAL = 5  # seconds
 
 registry = {}
 registry_lock = threading.Lock()
+update_registry_entries_per_name({})
 
 # --------------------------------------------------
 # REGISTRATION
@@ -52,6 +65,14 @@ def register():
     }
 
     with registry_lock:
+
+        # Branch C: detect overwrite of existing service_id
+        if service_id in registry:
+            increment_registry_overwrite()
+
+        # Branch B: count registrations by service name
+        increment_registry_registration(name)
+
         registry[service_id] = service
 
     return jsonify({
@@ -177,6 +198,16 @@ def health():
         "status": "ok"
     }), 200
 
+# --------------------------------------------------
+# Metrics
+# --------------------------------------------------
+
+@app.route('/metrics', methods=['GET'])
+def metrics():
+    return generate_latest(), 200, {
+        "Content-Type": CONTENT_TYPE_LATEST
+    }
+
 
 # --------------------------------------------------
 # REMOVE DEAD SERVICES
@@ -195,6 +226,18 @@ def remove_dead_services():
 
         for service_id in dead:
             del registry[service_id]
+
+        # Branch C: count remaining Registry entries by service name
+        entries_per_name = {}
+
+        for service in registry.values():
+            name = service["name"]
+
+            entries_per_name[name] = (
+                entries_per_name.get(name, 0) + 1
+            )
+
+        update_registry_entries_per_name(entries_per_name)
 
     if dead:
         print("Removed inactive services:", dead)

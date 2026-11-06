@@ -7,7 +7,17 @@ import time
 import requests
 import sqlite3
 
+from monitoring.middleware import instrument_app
+from monitoring.metrics import set_storage_unique_devices
+from prometheus_client import generate_latest
+
+
 app = Flask(__name__)
+
+instrument_app(app)
+
+unique_devices = set()
+unique_devices_lock = threading.Lock()
 
 # --------------------------------------------------
 # CONFIGURATION
@@ -215,6 +225,11 @@ def store():
         }), 400
 
     source_ip = str(data.get("source_ip") or "")[:64]
+
+    with unique_devices_lock:
+        unique_devices.add(device_id)
+        set_storage_unique_devices(len(unique_devices))
+
     conn = get_db()
 
     try:
@@ -336,6 +351,16 @@ def health():
             "status": "error",
             "message": "Database unavailable"
         }), 503
+
+# --------------------------------------------------
+# METRICS
+# --------------------------------------------------
+
+@app.route('/metrics', methods=['GET'])
+def metrics():
+    return generate_latest(), 200, {
+        "Content-Type": "text/plain; version=0.0.4; charset=utf-8"
+    }
 
 
 # --------------------------------------------------

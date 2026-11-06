@@ -5,7 +5,12 @@ import requests
 import threading
 import time
 
+from monitoring.middleware import instrument_app
+from prometheus_client import generate_latest
+
 app = Flask(__name__)
+
+instrument_app(app)
 
 # --------------------------------------------------
 # CONFIGURATION
@@ -199,6 +204,15 @@ def health():
         "status": "ok"
     }), 200
 
+# --------------------------------------------------
+# METRICS
+# --------------------------------------------------
+
+@app.route('/metrics', methods=['GET'])
+def metrics():
+    return generate_latest(), 200, {
+        "Content-Type": "text/plain; version=0.0.4; charset=utf-8"
+    }
 
 # --------------------------------------------------
 # START
