@@ -53,8 +53,12 @@ deploy() {
     incus exec "$name" -- mkdir -p /var/log/ssle
     incus exec "$name" -- chown -R ssle:ssle /var/log/ssle
 
-    # Copiar para o contentor todos os ficheiros indicados nos argumentos
-    # incus file push "$ROOT/services/serviceRegistry.py" \ registry-pt-aveiro-dc1-r01-n01/opt/ssle/
+    # Criar a pasta monitoring e copiar os ficheiros de monitorização uma única vez por contentor
+    incus exec "$name" -- mkdir -p /opt/ssle/monitoring
+    incus file push "$ROOT/monitoring/metrics.py" "$name/opt/ssle/monitoring/"
+    incus file push "$ROOT/monitoring/middleware.py" "$name/opt/ssle/monitoring/"
+
+    # Copiar para o contentor todos os ficheiros de serviço indicados nos argumentos
     for f in "$@"; do
         incus file push "$ROOT/$f" "$name/opt/ssle/"
     done

@@ -1,0 +1,17 @@
+avg_over_time(incus_container_cpu_usage_percent{container="ingestion-pt-aveiro-dc1-r01-n02"}[10m])
+{container="ingestion-pt-aveiro-dc1-r01-n02",instance="10.255.255.1:9101",job="incus"}	0.7687252441972042
+
+max_over_time(incus_container_cpu_usage_percent{container="ingestion-pt-aveiro-dc1-r01-n02"}[10m])
+{container="ingestion-pt-aveiro-dc1-r01-n02",instance="10.255.255.1:9101",job="incus"}	1.6699406742231182
+
+avg_over_time(incus_container_memory_usage_bytes{container="ingestion-pt-aveiro-dc1-r01-n02"}[10m])
+{container="ingestion-pt-aveiro-dc1-r01-n02",instance="10.255.255.1:9101",job="incus"}	328354372.2666666
+
+max_over_time(incus_container_memory_usage_bytes{container="ingestion-pt-aveiro-dc1-r01-n02"}[10m])
+{container="ingestion-pt-aveiro-dc1-r01-n02",instance="10.255.255.1:9101",job="incus"}	328364032
+
+sum(rate(http_requests_total{job="ssle-services"}[1m]))
+2.3785044822008397
+
+sum(increase(http_requests_total{job="ssle-services"}[10m]))
+1404.1138146976639

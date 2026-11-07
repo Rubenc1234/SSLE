@@ -2,7 +2,7 @@
 source "$(dirname "$0")/lib.sh"
 sleep 10   # tempo para os serviços se registarem
 
-incus file push "$ROOT/services/test_system.py" "$ANALYTICS/tmp/test_system.py"
+incus file push "$ROOT/services/test_system.py" "$ANALYTICS/opt/ssle/test_system.py"
 incus exec "$ANALYTICS" -- env \
   REGISTRY="http://$REGISTRY.incus:5050" \
   INGESTION="http://$INGESTION.incus:5001" \

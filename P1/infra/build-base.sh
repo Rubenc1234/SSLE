@@ -9,7 +9,7 @@ until incus exec base -- getent hosts deb.debian.org >/dev/null 2>&1; do sleep 1
 incus exec base -- bash -c '
     apt-get update &&
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        python3 python3-flask python3-requests curl sqlite3 logrotate &&
+        python3 python3-flask python3-requests curl sqlite3 logrotate python3-prometheus-client &&
     useradd --system --no-create-home --home-dir /var/lib/ssle \
         --shell /usr/sbin/nologin ssle &&
     mkdir -p /opt/ssle /etc/ssle /etc/systemd/journald.conf.d /var/log/ssle &&
