@@ -180,7 +180,9 @@ def main():
     sensor_registrations = query_prometheus(
         'sum(increase(registry_registrations_total{name="sensor"}[10m]))'
     )
-    unique_devices = query_prometheus("storage_unique_devices_total")
+    unique_devices = query_prometheus(
+	    'storage_unique_devices_total{instance="storage-pt-aveiro-dc1-r02-n01.incus:5002"}'
+	)
     registry_overwrites = query_prometheus("registry_overwrites_total")
     storage_entries = query_prometheus(
         'registry_entries_per_name{name="storage-service"}'

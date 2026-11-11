@@ -1,0 +1,33 @@
+DoS:
+python3 /root/attacker.py dos-flood --requests 500 --concurrency 50
+
+=======================================================
+ RELATÓRIO: DOS-FLOOD
+=======================================================
+Duração:             12.0068 s
+Pedidos:             500
+Respostas HTTP 2xx:  422
+Pedidos/segundo:     41.64
+Latência média:      1040.04 ms
+Códigos HTTP:        {'200': 422}
+Erros:               {'ReadTimeout': 78}
+Fases:               {'ingestion': 500}
+=======================================================
+
+
+python3 /root/attacker.py dos-flood --requests 3000 --concurrency 30
+
+=======================================================
+ RELATÓRIO: DOS-FLOOD
+=======================================================
+Duração:             54.1024 s
+Pedidos:             3000
+Respostas HTTP 2xx:  2826
+Pedidos/segundo:     55.45
+Latência média:      535.17 ms
+Códigos HTTP:        {'200': 2826}
+Erros:               {'ReadTimeout': 174}
+Fases:               {'ingestion': 3000}
+=======================================================
+
+

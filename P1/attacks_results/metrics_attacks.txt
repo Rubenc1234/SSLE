@@ -1,0 +1,23 @@
+DoS:
+sum(rate(http_requests_total{instance=~"ingestion.*"}[1m])) by (endpoint)
+
+latency:
+histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[1m])) by (le, endpoint))
+
+erro http:
+sum(rate(http_requests_total{status=~"5.."}[1m])) by (instance)
+
+
+
+botnet dispositivos unicos:
+storage_unique_devices_total{instance="storage-pt-aveiro-dc1-r02-n01.incus:5002"}
+
+taxas de registos:
+rate(registry_registrations_total[1m])
+
+
+
+hijacking:
+registry_overwrites_total
+sum(rate(http_requests_total{instance=~"ingestion.*", status=~"5.."}[1m])) by (instance)
+registry_entries_per_name

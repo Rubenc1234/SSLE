@@ -1,0 +1,16 @@
+Botnet:
+python3 /root/attacker.py botnet --sensors 30 --requests-per-sensor 5
+
+=======================================================
+ RELATÓRIO: BOTNET
+=======================================================
+Duração:             4.6096 s
+Pedidos:             181
+Respostas HTTP 2xx:  181
+Pedidos/segundo:     39.27
+Latência média:      40.47 ms
+Códigos HTTP:        {'200': 181}
+Erros:               {}
+Fases:               {'sensor_registration': 30, 'fake_temperature_injection': 150, 'storage_verification': 1}
+=======================================================
+
