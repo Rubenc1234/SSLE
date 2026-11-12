@@ -69,6 +69,10 @@ def register():
         # Branch C: detect overwrite of existing service_id
         if service_id in registry:
             increment_registry_overwrite()
+            old_url = registry[service_id]["url"]
+
+            if old_url != url:
+                print(f"REGISTRY_OVERWRITE service_id={service_id} src_ip={request.remote_addr} old_url={old_url} new_url={url}", flush=True)
 
         # Branch B: count registrations by service name
         increment_registry_registration(name)
