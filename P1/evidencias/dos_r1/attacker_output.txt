@@ -1,0 +1,28 @@
+
+========================================
+ SSLE - EXPERIMENTAÇÃO DE ATAQUES
+========================================
+Modo:       dos-flood
+Registry:   http://registry-pt-aveiro-dc1-r01-n01.incus:5050
+Ingestion:  http://ingestion-pt-aveiro-dc1-r01-n02.incus:5001
+Storage:    http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+========================================
+
+[A1] DoS Flood: 3000 pedidos com concorrência 30.
+
+=======================================================
+ RELATÓRIO: DOS-FLOOD
+=======================================================
+Duração:             57.7782 s
+Pedidos:             3000
+Respostas HTTP 2xx:  2787
+Pedidos/segundo:     51.92
+Latência média:      570.99 ms
+Códigos HTTP:        {'200': 2787}
+Erros:               {'ReadTimeout': 213}
+Fases:               {'ingestion': 3000}
+=======================================================
+
+
+[+] Execução concluída.
+

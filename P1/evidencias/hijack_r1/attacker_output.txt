@@ -1,0 +1,33 @@
+
+========================================
+ SSLE - EXPERIMENTAÇÃO DE ATAQUES
+========================================
+Modo:       hijack
+Registry:   http://registry-pt-aveiro-dc1-r01-n01.incus:5050
+Ingestion:  http://ingestion-pt-aveiro-dc1-r01-n02.incus:5001
+Storage:    http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+========================================
+
+[C] Tentativa de Registry Hijacking para storage-pt-aveiro-dc1-r02-n01.
+[C] Resposta do registo: HTTP 200
+[C] A verificar descoberta do Storage...
+[C] URL devolvido pelo Registry: http://malicious-node.incus:6666
+[C] SUCESSO: o Registry devolveu o endpoint malicioso.
+[C] Nota: o Ingestion pode manter o URL legítimo na cache durante até 10 segundos. A alteração do Registry não prova, por si só, que o consumidor já comunicou com o endpoint malicioso.
+
+=======================================================
+ RELATÓRIO: REGISTRY-HIJACK
+=======================================================
+Duração:             0.008 s
+Pedidos:             2
+Respostas HTTP 2xx:  2
+Pedidos/segundo:     249.99
+Latência média:      3.97 ms
+Códigos HTTP:        {'200': 2}
+Erros:               {}
+Fases:               {'registry_overwrite': 1, 'registry_discovery_verification': 1}
+=======================================================
+
+
+[+] Execução concluída.
+

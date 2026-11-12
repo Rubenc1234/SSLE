@@ -1,0 +1,60 @@
+{
+    "scenario": "baseline",
+    "timestamp": "2026-11-12T17:53:15.196918",
+    "infrastructure": {
+        "registry-pt-aveiro-dc1-r01-n01": {
+            "cpu_avg_percent": 0.5126778760722067,
+            "cpu_max_percent": 11.300167424693106,
+            "ram_avg_mib": 155.14296874999994,
+            "ram_max_mib": 160.6640625
+        },
+        "storage-pt-aveiro-dc1-r02-n01": {
+            "cpu_avg_percent": 0.35624830259924917,
+            "cpu_max_percent": 5.078231129203821,
+            "ram_avg_mib": 175.64811197916674,
+            "ram_max_mib": 176.78125
+        },
+        "ingestion-pt-aveiro-dc1-r01-n02": {
+            "cpu_avg_percent": 0.4156365570522217,
+            "cpu_max_percent": 5.401114685527168,
+            "ram_avg_mib": 173.0521158854167,
+            "ram_max_mib": 174.87890625
+        },
+        "analytics-pt-aveiro-dc1-r02-n02": {
+            "cpu_avg_percent": 0.22584977317654195,
+            "cpu_max_percent": 11.551278403435486,
+            "ram_avg_mib": 131.56305338541665,
+            "ram_max_mib": 164.58203125
+        }
+    },
+    "services": {
+        "registry-pt-aveiro-dc1-r01-n01": {
+            "rps": 1.4176085224940083,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.004749999999999999
+        },
+        "storage-pt-aveiro-dc1-r02-n01": {
+            "rps": 0.4280716774444822,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.0999367088607595
+        },
+        "ingestion-pt-aveiro-dc1-r01-n02": {
+            "rps": 0.4280746814878753,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.1539999999999998
+        },
+        "analytics-pt-aveiro-dc1-r02-n02": {
+            "rps": 0.0666856194216602,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.00475
+        },
+        "ingestion_payload_p95_bytes": 95.0
+    },
+    "business": {
+        "sensor_registrations_10m": 2.0516397730886413,
+        "storage_unique_devices": 2.0,
+        "registry_overwrites_total": 0.0,
+        "registry_entries_storage": 1.0,
+        "registry_entries_ingestion": 1.0
+    }
+}

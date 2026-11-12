@@ -1,0 +1,60 @@
+{
+    "scenario": "baseline",
+    "timestamp": "2026-11-12T18:13:42.906056",
+    "infrastructure": {
+        "registry-pt-aveiro-dc1-r01-n01": {
+            "cpu_avg_percent": 0.5052118061887397,
+            "cpu_max_percent": 5.1112363321278425,
+            "ram_avg_mib": 159.21425781250008,
+            "ram_max_mib": 161.23828125
+        },
+        "storage-pt-aveiro-dc1-r02-n01": {
+            "cpu_avg_percent": 0.27168621400464926,
+            "cpu_max_percent": 6.149410128382316,
+            "ram_avg_mib": 169.1120442708333,
+            "ram_max_mib": 170.33984375
+        },
+        "ingestion-pt-aveiro-dc1-r01-n02": {
+            "cpu_avg_percent": 0.33822199706144157,
+            "cpu_max_percent": 5.828516264676256,
+            "ram_avg_mib": 166.78102213541663,
+            "ram_max_mib": 168.21875
+        },
+        "analytics-pt-aveiro-dc1-r02-n02": {
+            "cpu_avg_percent": 0.17631841849163032,
+            "cpu_max_percent": 0.37241057729508814,
+            "ram_avg_mib": 164.61311848958326,
+            "ram_max_mib": 164.62890625
+        }
+    },
+    "services": {
+        "registry-pt-aveiro-dc1-r01-n01": {
+            "rps": 1.2947413850574916,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.0047628032345013475
+        },
+        "storage-pt-aveiro-dc1-r02-n01": {
+            "rps": 0.29473684210526313,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.09881429814157044
+        },
+        "ingestion-pt-aveiro-dc1-r01-n02": {
+            "rps": 0.3103441980424129,
+            "error_rate": 0.029642920634920637,
+            "latency_p95_seconds": 0.09857142857142859
+        },
+        "analytics-pt-aveiro-dc1-r02-n02": {
+            "rps": 0.0666669005856161,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.004750000000000001
+        },
+        "ingestion_payload_p95_bytes": 95.0
+    },
+    "business": {
+        "sensor_registrations_10m": 0.0,
+        "storage_unique_devices": 2.0,
+        "registry_overwrites_total": 0.0,
+        "registry_entries_storage": 1.0,
+        "registry_entries_ingestion": 1.0
+    }
+}

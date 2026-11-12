@@ -1,0 +1,30 @@
+
+========================================
+ SSLE - EXPERIMENTAÇÃO DE ATAQUES
+========================================
+Modo:       botnet
+Registry:   http://registry-pt-aveiro-dc1-r01-n01.incus:5050
+Ingestion:  http://ingestion-pt-aveiro-dc1-r01-n02.incus:5001
+Storage:    http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+========================================
+
+[B] Botnet: 30 sensores, 5 leituras por sensor.
+[B] A verificar dados no Storage...
+[B] Registos Botnet encontrados: 150
+
+=======================================================
+ RELATÓRIO: BOTNET
+=======================================================
+Duração:             4.4753 s
+Pedidos:             181
+Respostas HTTP 2xx:  181
+Pedidos/segundo:     40.44
+Latência média:      37.08 ms
+Códigos HTTP:        {'200': 181}
+Erros:               {}
+Fases:               {'sensor_registration': 30, 'fake_temperature_injection': 150, 'storage_verification': 1}
+=======================================================
+
+
+[+] Execução concluída.
+
