@@ -23,7 +23,7 @@ run_attacker() {
 
 case "$ATTACK" in
     dos)
-        CMD=(run_attacker dos-flood --requests 3000 --concurrency 30) ;;
+        CMD=(run_attacker dos-flood --requests 3000 --concurrency 30 --max-seconds 80) ;;
     botnet)
         CMD=(run_attacker botnet --sensors 30 --requests-per-sensor 5) ;;
     hijack)

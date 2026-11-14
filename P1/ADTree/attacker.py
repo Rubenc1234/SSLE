@@ -358,7 +358,8 @@ def attack_dos_flood(
     target_url,
     num_requests=300,
     concurrency=20,
-    timeout=DEFAULT_TIMEOUT
+    timeout=DEFAULT_TIMEOUT,
+    max_seconds=None
 ):
 
     metrics = AttackMetrics("dos-flood")
@@ -375,7 +376,17 @@ def attack_dos_flood(
         f"com concorrência {concurrency}."
     )
 
+    deadline = (
+        time.monotonic() + max_seconds
+        if max_seconds else None
+    )
+
     def worker():
+
+        if deadline is not None and time.monotonic() >= deadline:
+            with metrics._lock:
+                metrics.phases["skipped_deadline"] += 1
+            return
 
         send_request(
             metrics,
@@ -815,6 +826,13 @@ def parse_arguments():
     )
 
     parser.add_argument(
+        "--max-seconds",
+        type=float,
+        default=None,
+        help="Tempo maximo do DoS Flood em segundos."
+    )
+
+    parser.add_argument(
         "--sensors",
         type=int,
         default=10,
@@ -880,6 +898,9 @@ def parse_arguments():
         "--concurrency",
         MAX_CONCURRENCY
     )
+
+    if args.max_seconds is not None:
+        verify_positive(args.max_seconds, "--max-seconds")
 
     verify_positive(
         args.sensors,
@@ -949,7 +970,8 @@ def main():
             ingestion_url,
             num_requests=args.requests,
             concurrency=args.concurrency,
-            timeout=args.timeout
+            timeout=args.timeout,
+            max_seconds=args.max_seconds
         )
 
         metrics.print_summary()
