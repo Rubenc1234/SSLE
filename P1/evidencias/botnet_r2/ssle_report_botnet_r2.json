@@ -1,0 +1,60 @@
+{
+    "scenario": "baseline",
+    "timestamp": "2026-11-14T13:40:46.716047",
+    "infrastructure": {
+        "registry-pt-aveiro-dc1-r01-n01": {
+            "cpu_avg_percent": 0.4775452827987137,
+            "cpu_max_percent": 5.657899642838249,
+            "ram_avg_mib": 112.84371744791672,
+            "ram_max_mib": 113.640625
+        },
+        "storage-pt-aveiro-dc1-r02-n01": {
+            "cpu_avg_percent": 0.5217211281877419,
+            "cpu_max_percent": 8.977431939867483,
+            "ram_avg_mib": 253.34615885416656,
+            "ram_max_mib": 264.609375
+        },
+        "ingestion-pt-aveiro-dc1-r01-n02": {
+            "cpu_avg_percent": 0.5534963135520105,
+            "cpu_max_percent": 11.109172463592667,
+            "ram_avg_mib": 216.73990885416669,
+            "ram_max_mib": 223.8203125
+        },
+        "analytics-pt-aveiro-dc1-r02-n02": {
+            "cpu_avg_percent": 0.13755564497983833,
+            "cpu_max_percent": 0.3335379506994778,
+            "ram_avg_mib": 158.72926432291666,
+            "ram_max_mib": 158.7421875
+        }
+    },
+    "services": {
+        "registry-pt-aveiro-dc1-r01-n01": {
+            "rps": 1.43859649122807,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.00475
+        },
+        "storage-pt-aveiro-dc1-r02-n01": {
+            "rps": 0.975438596491228,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.09174242424242424
+        },
+        "ingestion-pt-aveiro-dc1-r01-n02": {
+            "rps": 0.982469929402518,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.09382716049382715
+        },
+        "analytics-pt-aveiro-dc1-r02-n02": {
+            "rps": 0.06666736842843961,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.00475
+        },
+        "ingestion_payload_p95_bytes": 95.0
+    },
+    "business": {
+        "sensor_registrations_10m": 30.769230769230766,
+        "storage_unique_devices": 32.0,
+        "registry_overwrites_total": 0.0,
+        "registry_entries_storage": 1.0,
+        "registry_entries_ingestion": 1.0
+    }
+}

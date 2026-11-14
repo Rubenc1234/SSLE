@@ -1,0 +1,5 @@
+label=normal_r3
+start=2026-11-14T14:29:25+00:00
+end=2026-11-14T14:31:25+00:00
+duration_s=120
+window_s=140
