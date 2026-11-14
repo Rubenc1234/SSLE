@@ -14,11 +14,11 @@ mkdir -p "$OUT"
 
 # Comando comum: o attacker.py recebe os URLs por variáveis de ambiente
 run_attacker() {
-    incus exec "$ATTACKER" -- env \
+    timeout -k 5 100 incus exec "$ATTACKER" -- timeout -k 5 90 env \
         REGISTRY_URL="http://$REGISTRY.incus:5050" \
         INGESTION_URL="http://$INGESTION.incus:5001" \
         STORAGE_URL="http://$STORAGE.incus:5002" \
-        python3 /root/attacker.py "$@"
+        python3 /root/attacker.py "$@" < /dev/null
 }
 
 case "$ATTACK" in

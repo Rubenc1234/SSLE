@@ -4,6 +4,8 @@ import argparse
 from datetime import datetime
 
 PROMETHEUS_URL = "http://10.255.255.27:9090/api/v1/query"
+WINDOW = "10m"
+AT = None
 
 SERVICES = {
     "registry-pt-aveiro-dc1-r01-n01": "registry-pt-aveiro-dc1-r01-n01.incus:5050",
@@ -24,10 +26,14 @@ def query_prometheus(promql):
 
     Nunca confundir None com 0.0 ao analisar os resultados depois.
     """
+    promql = promql.replace("[10m]", f"[{WINDOW}]").replace("[5m]", f"[{WINDOW}]")
+    params = {"query": promql}
+    if AT:
+        params["time"] = AT
     try:
         response = requests.get(
             PROMETHEUS_URL,
-            params={"query": promql},
+            params=params,
             timeout=5
         )
         data = response.json()
@@ -70,7 +76,11 @@ def main():
         default="baseline",
         help="Nome do cenario (ex: baseline, attack_A1, mitigation_A1)",
     )
+    parser.add_argument("--window", default="10m")
+    parser.add_argument("--at", type=int, default=None)
     args = parser.parse_args()
+    global WINDOW, AT
+    WINDOW, AT = args.window, args.at
 
     print(
         f"=== TELEMETRIA SSLE [{args.label.upper()}] - "
