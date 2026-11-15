@@ -1,0 +1,75 @@
+{
+    "scenario": "normal_wazuh_r1",
+    "timestamp": "2026-11-15T18:01:40.649419",
+    "window": "150s",
+    "at": 1794765690,
+    "at_utc": "2026-11-15T18:01:30+00:00",
+    "data_ok": true,
+    "infrastructure": {
+        "registry-pt-aveiro-dc1-r01-n01": {
+            "cpu_avg_percent": 0.5137732487337932,
+            "cpu_max_percent": 1.2023959797270305,
+            "ram_avg_mib": 131.99791666666664,
+            "ram_max_mib": 132.09375
+        },
+        "storage-pt-aveiro-dc1-r02-n01": {
+            "cpu_avg_percent": 0.28432089984354597,
+            "cpu_max_percent": 0.521082851197326,
+            "ram_avg_mib": 89.32994791666667,
+            "ram_max_mib": 89.43359375
+        },
+        "ingestion-pt-aveiro-dc1-r01-n02": {
+            "cpu_avg_percent": 0.48202299831197987,
+            "cpu_max_percent": 1.2179676449499481,
+            "ram_avg_mib": 140.56210937499998,
+            "ram_max_mib": 140.68359375
+        },
+        "analytics-pt-aveiro-dc1-r02-n02": {
+            "cpu_avg_percent": 0.11475769432191382,
+            "cpu_max_percent": 0.2348334405487697,
+            "ram_avg_mib": 76.2265625,
+            "ram_max_mib": 76.23046875
+        }
+    },
+    "services": {
+        "registry-pt-aveiro-dc1-r01-n01": {
+            "rps": 1.3628821995733584,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.00475,
+            "requests_window": 204.43232993600375
+        },
+        "storage-pt-aveiro-dc1-r02-n01": {
+            "rps": 0.45477840248301815,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.09631988086223822,
+            "requests_window": 68.21676037245273
+        },
+        "ingestion-pt-aveiro-dc1-r01-n02": {
+            "rps": 0.4542118518518518,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.09661736020088882,
+            "requests_window": 68.13177777777777
+        },
+        "analytics-pt-aveiro-dc1-r02-n02": {
+            "rps": 0.06666666666666665,
+            "error_rate": 0.0,
+            "latency_p95_seconds": 0.004749999999999999,
+            "requests_window": 9.999999999999998
+        },
+        "ingestion_payload_p95_bytes": 95.0
+    },
+    "ingestion_extra": {
+        "ingest_requests_window": 58.13177777777777,
+        "ingest_2xx_window": 58.13177777777777,
+        "ingest_5xx_window": 0.0,
+        "ingest_peak_rps_45s": 0.4000533404453927
+    },
+    "business": {
+        "registry_register_requests_window": 0.0,
+        "sensor_registrations_window": 0.0,
+        "storage_unique_devices": 2.0,
+        "registry_overwrites": 1.0,
+        "registry_entries_storage": 1.0,
+        "registry_entries_ingestion": 1.0
+    }
+}

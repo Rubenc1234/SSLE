@@ -1,0 +1,287 @@
+=== 17:42:53 INICIO botnet wazuh_ar_ab_r2 | DROP registry=0 ingestion=0 | infra OK
+[*] A repor estado limpo (restart dos serviços)...
+[*] A iniciar execução do ataque: botnet
+
+========================================
+ SSLE - EXPERIMENTAÇÃO DE ATAQUES
+========================================
+Modo:       botnet
+Registry:   http://registry-pt-aveiro-dc1-r01-n01.incus:5050
+Ingestion:  http://ingestion-pt-aveiro-dc1-r01-n02.incus:5001
+Storage:    http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+========================================
+
+[B] Botnet: 30 sensores, 5 leituras por sensor.
+[B] A verificar dados no Storage...
+[B] Registos Botnet encontrados: 300
+
+=======================================================
+ RELATÓRIO: BOTNET
+=======================================================
+Duração:             43.1193 s
+Pedidos:             181
+Respostas HTTP 2xx:  116
+Pedidos/segundo:     4.2
+Latência média:      1105.78 ms
+Códigos HTTP:        {'200': 116}
+Erros:               {'ConnectTimeout': 65}
+Fases:               {'sensor_registration': 30, 'fake_temperature_injection': 150, 'storage_verification': 1}
+=======================================================
+
+
+[+] Execução concluída.
+
+[*] A recolher telemetria e métricas pós-ataque...
+=== TELEMETRIA SSLE [BOTNET_WAZUH_AR_AB_R2] janela=90s fim=2026-11-15T17:44:44+00:00 ===
+
+[+] Infraestrutura (Incus)...
+ -> registry-pt-aveiro-dc1-r01-n01: CPU media=0.61%, CPU max=1.93%, RAM media=131.36 MiB, RAM max=131.46 MiB
+ -> storage-pt-aveiro-dc1-r02-n01: CPU media=0.76%, CPU max=6.62%, RAM media=89.89 MiB, RAM max=90.77 MiB
+ -> ingestion-pt-aveiro-dc1-r01-n02: CPU media=1.11%, CPU max=8.90%, RAM media=140.55 MiB, RAM max=140.71 MiB
+ -> analytics-pt-aveiro-dc1-r02-n02: CPU media=0.12%, CPU max=0.16%, RAM media=76.22 MiB, RAM max=76.22 MiB
+
+[+] RED por servico...
+ -> registry-pt-aveiro-dc1-r01-n01: RPS=1.557, Erros/s=0.000, p95=0.0047s, pedidos=140
+ -> storage-pt-aveiro-dc1-r02-n01: RPS=1.735, Erros/s=0.000, p95=0.0927s, pedidos=156
+ -> ingestion-pt-aveiro-dc1-r01-n02: RPS=1.619, Erros/s=0.000, p95=0.0937s, pedidos=146
+ -> analytics-pt-aveiro-dc1-r02-n02: RPS=0.067, Erros/s=0.000, p95=0.0047s, pedidos=6
+ -> Payload p95 (Ingestion): 95.00 bytes
+
+[+] /ingest no Ingestion...
+ -> pedidos=140, 2xx=140, 5xx=0, pico RPS (suavizado 45 s)=3.40
+
+[+] Negocio...
+ -> POST /register no Registry: 18
+ -> Registos de sensores (janela): 18
+ -> Dispositivos unicos (Storage, max): 22
+ -> Registry overwrites (max): 0
+ -> Entradas storage-service: 1 | ingestion-service: 1
+
+[INFO] Relatorio guardado em 'ssle_report_botnet_wazuh_ar_ab_r2.json' (data_ok=True)
+[OK] Teste concluído com sucesso! Evidências guardadas em: evidencias/botnet_wazuh_ar_ab_r2
+=== 17:44:49 FIM botnet wazuh_ar_ab_r2 (exit=0) "data_ok":true,
+=== 17:46:50 INICIO botnet wazuh_ar_ab_r3 | DROP registry=0 ingestion=0 | infra OK
+[*] A repor estado limpo (restart dos serviços)...
+[*] A iniciar execução do ataque: botnet
+
+========================================
+ SSLE - EXPERIMENTAÇÃO DE ATAQUES
+========================================
+Modo:       botnet
+Registry:   http://registry-pt-aveiro-dc1-r01-n01.incus:5050
+Ingestion:  http://ingestion-pt-aveiro-dc1-r01-n02.incus:5001
+Storage:    http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+========================================
+
+[B] Botnet: 30 sensores, 5 leituras por sensor.
+[B] A verificar dados no Storage...
+[B] Registos Botnet encontrados: 400
+
+=======================================================
+ RELATÓRIO: BOTNET
+=======================================================
+Duração:             46.4634 s
+Pedidos:             181
+Respostas HTTP 2xx:  111
+Pedidos/segundo:     3.9
+Latência média:      1195.44 ms
+Códigos HTTP:        {'200': 111}
+Erros:               {'ConnectTimeout': 70}
+Fases:               {'sensor_registration': 30, 'fake_temperature_injection': 150, 'storage_verification': 1}
+=======================================================
+
+
+[+] Execução concluída.
+
+[*] A recolher telemetria e métricas pós-ataque...
+=== TELEMETRIA SSLE [BOTNET_WAZUH_AR_AB_R3] janela=90s fim=2026-11-15T17:48:41+00:00 ===
+
+[+] Infraestrutura (Incus)...
+ -> registry-pt-aveiro-dc1-r01-n01: CPU media=0.66%, CPU max=1.91%, RAM media=131.73 MiB, RAM max=131.84 MiB
+ -> storage-pt-aveiro-dc1-r02-n01: CPU media=0.90%, CPU max=5.77%, RAM media=89.96 MiB, RAM max=90.80 MiB
+ -> ingestion-pt-aveiro-dc1-r01-n02: CPU media=1.38%, CPU max=8.16%, RAM media=140.61 MiB, RAM max=140.77 MiB
+ -> analytics-pt-aveiro-dc1-r02-n02: CPU media=0.12%, CPU max=0.19%, RAM media=76.22 MiB, RAM max=76.22 MiB
+
+[+] RED por servico...
+ -> registry-pt-aveiro-dc1-r01-n01: RPS=1.507, Erros/s=0.000, p95=0.0047s, pedidos=136
+ -> storage-pt-aveiro-dc1-r02-n01: RPS=1.751, Erros/s=0.000, p95=0.0948s, pedidos=158
+ -> ingestion-pt-aveiro-dc1-r01-n02: RPS=1.672, Erros/s=0.000, p95=0.0962s, pedidos=150
+ -> analytics-pt-aveiro-dc1-r02-n02: RPS=0.067, Erros/s=0.000, p95=0.0047s, pedidos=6
+ -> Payload p95 (Ingestion): 95.00 bytes
+
+[+] /ingest no Ingestion...
+ -> pedidos=144, 2xx=144, 5xx=0, pico RPS (suavizado 45 s)=3.61
+
+[+] Negocio...
+ -> POST /register no Registry: 12
+ -> Registos de sensores (janela): 12
+ -> Dispositivos unicos (Storage, max): 22
+ -> Registry overwrites (max): 0
+ -> Entradas storage-service: 1 | ingestion-service: 1
+
+[INFO] Relatorio guardado em 'ssle_report_botnet_wazuh_ar_ab_r3.json' (data_ok=True)
+[OK] Teste concluído com sucesso! Evidências guardadas em: evidencias/botnet_wazuh_ar_ab_r3
+=== 17:48:47 FIM botnet wazuh_ar_ab_r3 (exit=0) "data_ok":true,
+=== 17:50:47 INICIO hijack wazuh_r2 | DROP registry=0 ingestion=0 | infra OK
+[*] A repor estado limpo (restart dos serviços)...
+[*] A iniciar execução do ataque: hijack
+
+========================================
+ SSLE - EXPERIMENTAÇÃO DE ATAQUES
+========================================
+Modo:       hijack
+Registry:   http://registry-pt-aveiro-dc1-r01-n01.incus:5050
+Ingestion:  http://ingestion-pt-aveiro-dc1-r01-n02.incus:5001
+Storage:    http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+========================================
+
+[C] Tentativa de Registry Hijacking para storage-pt-aveiro-dc1-r02-n01.
+[C] Resposta do registo: HTTP 200
+[C] A verificar descoberta do Storage...
+[C] URL devolvido pelo Registry: http://malicious-node.incus:6666
+[C] SUCESSO: o Registry devolveu o endpoint malicioso.
+[C] Nota: o Ingestion pode manter o URL legítimo na cache durante até 10 segundos. A alteração do Registry não prova, por si só, que o consumidor já comunicou com o endpoint malicioso.
+
+=======================================================
+ RELATÓRIO: REGISTRY-HIJACK
+=======================================================
+Duração:             0.0086 s
+Pedidos:             2
+Respostas HTTP 2xx:  2
+Pedidos/segundo:     232.69
+Latência média:      4.26 ms
+Códigos HTTP:        {'200': 2}
+Erros:               {}
+Fases:               {'registry_overwrite': 1, 'registry_discovery_verification': 1}
+=======================================================
+
+
+[+] Execução concluída.
+
+[*] A recolher telemetria e métricas pós-ataque...
+=== TELEMETRIA SSLE [HIJACK_WAZUH_R2] janela=90s fim=2026-11-15T17:52:38+00:00 ===
+
+[+] Infraestrutura (Incus)...
+ -> registry-pt-aveiro-dc1-r01-n01: CPU media=0.52%, CPU max=0.88%, RAM media=131.75 MiB, RAM max=132.06 MiB
+ -> storage-pt-aveiro-dc1-r02-n01: CPU media=0.17%, CPU max=0.39%, RAM media=89.28 MiB, RAM max=89.29 MiB
+ -> ingestion-pt-aveiro-dc1-r01-n02: CPU media=0.42%, CPU max=0.95%, RAM media=140.78 MiB, RAM max=141.00 MiB
+ -> analytics-pt-aveiro-dc1-r02-n02: CPU media=0.11%, CPU max=0.18%, RAM media=76.22 MiB, RAM max=76.22 MiB
+
+[+] RED por servico...
+ -> registry-pt-aveiro-dc1-r01-n01: RPS=1.493, Erros/s=0.000, p95=0.0047s, pedidos=134
+ -> storage-pt-aveiro-dc1-r02-n01: RPS=0.107, Erros/s=0.000, p95=0.0933s, pedidos=10
+ -> ingestion-pt-aveiro-dc1-r01-n02: RPS=0.241, Erros/s=0.081, p95=0.0917s, pedidos=22
+ -> analytics-pt-aveiro-dc1-r02-n02: RPS=0.067, Erros/s=0.000, p95=0.0047s, pedidos=6
+ -> Payload p95 (Ingestion): 95.00 bytes
+
+[+] /ingest no Ingestion...
+ -> pedidos=16, 2xx=8, 5xx=7, pico RPS (suavizado 45 s)=0.40
+
+[+] Negocio...
+ -> POST /register no Registry: 1
+ -> Registos de sensores (janela): 0
+ -> Dispositivos unicos (Storage, max): 2
+ -> Registry overwrites (max): 1
+ -> Entradas storage-service: 1 | ingestion-service: 1
+
+[INFO] Relatorio guardado em 'ssle_report_hijack_wazuh_r2.json' (data_ok=True)
+[OK] Teste concluído com sucesso! Evidências guardadas em: evidencias/hijack_wazuh_r2
+=== 17:52:43 FIM hijack wazuh_r2 (exit=0) "data_ok":true,
+=== 17:54:44 INICIO hijack wazuh_r3 | DROP registry=0 ingestion=0 | infra OK
+[*] A repor estado limpo (restart dos serviços)...
+[*] A iniciar execução do ataque: hijack
+
+========================================
+ SSLE - EXPERIMENTAÇÃO DE ATAQUES
+========================================
+Modo:       hijack
+Registry:   http://registry-pt-aveiro-dc1-r01-n01.incus:5050
+Ingestion:  http://ingestion-pt-aveiro-dc1-r01-n02.incus:5001
+Storage:    http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+========================================
+
+[C] Tentativa de Registry Hijacking para storage-pt-aveiro-dc1-r02-n01.
+[C] Resposta do registo: HTTP 200
+[C] A verificar descoberta do Storage...
+[C] URL devolvido pelo Registry: http://malicious-node.incus:6666
+[C] SUCESSO: o Registry devolveu o endpoint malicioso.
+[C] Nota: o Ingestion pode manter o URL legítimo na cache durante até 10 segundos. A alteração do Registry não prova, por si só, que o consumidor já comunicou com o endpoint malicioso.
+
+=======================================================
+ RELATÓRIO: REGISTRY-HIJACK
+=======================================================
+Duração:             0.0093 s
+Pedidos:             2
+Respostas HTTP 2xx:  2
+Pedidos/segundo:     214.45
+Latência média:      4.63 ms
+Códigos HTTP:        {'200': 2}
+Erros:               {}
+Fases:               {'registry_overwrite': 1, 'registry_discovery_verification': 1}
+=======================================================
+
+
+[+] Execução concluída.
+
+[*] A recolher telemetria e métricas pós-ataque...
+=== TELEMETRIA SSLE [HIJACK_WAZUH_R3] janela=90s fim=2026-11-15T17:56:34+00:00 ===
+
+[+] Infraestrutura (Incus)...
+ -> registry-pt-aveiro-dc1-r01-n01: CPU media=0.55%, CPU max=0.95%, RAM media=131.76 MiB, RAM max=131.82 MiB
+ -> storage-pt-aveiro-dc1-r02-n01: CPU media=0.18%, CPU max=0.35%, RAM media=89.27 MiB, RAM max=89.29 MiB
+ -> ingestion-pt-aveiro-dc1-r01-n02: CPU media=0.42%, CPU max=1.08%, RAM media=140.77 MiB, RAM max=141.03 MiB
+ -> analytics-pt-aveiro-dc1-r02-n02: CPU media=0.11%, CPU max=0.20%, RAM media=76.22 MiB, RAM max=76.24 MiB
+
+[+] RED por servico...
+ -> registry-pt-aveiro-dc1-r01-n01: RPS=1.506, Erros/s=0.000, p95=0.0047s, pedidos=136
+ -> storage-pt-aveiro-dc1-r02-n01: RPS=0.213, Erros/s=0.000, p95=0.0960s, pedidos=19
+ -> ingestion-pt-aveiro-dc1-r01-n02: RPS=0.250, Erros/s=0.076, p95=0.0920s, pedidos=22
+ -> analytics-pt-aveiro-dc1-r02-n02: RPS=0.067, Erros/s=0.000, p95=0.0047s, pedidos=6
+ -> Payload p95 (Ingestion): 95.00 bytes
+
+[+] /ingest no Ingestion...
+ -> pedidos=16, 2xx=10, 5xx=7, pico RPS (suavizado 45 s)=0.27
+
+[+] Negocio...
+ -> POST /register no Registry: 1
+ -> Registos de sensores (janela): 0
+ -> Dispositivos unicos (Storage, max): 2
+ -> Registry overwrites (max): 1
+ -> Entradas storage-service: 1 | ingestion-service: 1
+
+[INFO] Relatorio guardado em 'ssle_report_hijack_wazuh_r3.json' (data_ok=True)
+[OK] Teste concluído com sucesso! Evidências guardadas em: evidencias/hijack_wazuh_r3
+=== 17:56:39 FIM hijack wazuh_r3 (exit=0) "data_ok":true,
+=== 17:58:39 INICIO normal wazuh_r1 | DROP registry=0 ingestion=0 | infra OK
+[*] A repor estado limpo (restart dos serviços)...
+[*] A iniciar execução do ataque: normal
+[*] A recolher telemetria e métricas pós-ataque...
+=== TELEMETRIA SSLE [NORMAL_WAZUH_R1] janela=150s fim=2026-11-15T18:01:30+00:00 ===
+
+[+] Infraestrutura (Incus)...
+ -> registry-pt-aveiro-dc1-r01-n01: CPU media=0.51%, CPU max=1.20%, RAM media=132.00 MiB, RAM max=132.09 MiB
+ -> storage-pt-aveiro-dc1-r02-n01: CPU media=0.28%, CPU max=0.52%, RAM media=89.33 MiB, RAM max=89.43 MiB
+ -> ingestion-pt-aveiro-dc1-r01-n02: CPU media=0.48%, CPU max=1.22%, RAM media=140.56 MiB, RAM max=140.68 MiB
+ -> analytics-pt-aveiro-dc1-r02-n02: CPU media=0.11%, CPU max=0.23%, RAM media=76.23 MiB, RAM max=76.23 MiB
+
+[+] RED por servico...
+ -> registry-pt-aveiro-dc1-r01-n01: RPS=1.363, Erros/s=0.000, p95=0.0047s, pedidos=204
+ -> storage-pt-aveiro-dc1-r02-n01: RPS=0.455, Erros/s=0.000, p95=0.0963s, pedidos=68
+ -> ingestion-pt-aveiro-dc1-r01-n02: RPS=0.454, Erros/s=0.000, p95=0.0966s, pedidos=68
+ -> analytics-pt-aveiro-dc1-r02-n02: RPS=0.067, Erros/s=0.000, p95=0.0047s, pedidos=10
+ -> Payload p95 (Ingestion): 95.00 bytes
+
+[+] /ingest no Ingestion...
+ -> pedidos=58, 2xx=58, 5xx=0, pico RPS (suavizado 45 s)=0.40
+
+[+] Negocio...
+ -> POST /register no Registry: 0
+ -> Registos de sensores (janela): 0
+ -> Dispositivos unicos (Storage, max): 2
+ -> Registry overwrites (max): 1
+ -> Entradas storage-service: 1 | ingestion-service: 1
+
+[INFO] Relatorio guardado em 'ssle_report_normal_wazuh_r1.json' (data_ok=True)
+[OK] Teste concluído com sucesso! Evidências guardadas em: evidencias/normal_wazuh_r1
+=== 18:01:40 FIM normal wazuh_r1 (exit=0) "data_ok":true,
+=== BATCH CONCLUIDO 18:03:40

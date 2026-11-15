@@ -1,0 +1,6 @@
+label=normal_wazuh_r1
+start=2026-11-15T17:59:20+00:00
+end=2026-11-15T18:01:20+00:00
+duration_s=120
+at_epoch=1794765690
+window_s=150
