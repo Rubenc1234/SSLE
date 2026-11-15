@@ -1,0 +1,12 @@
+time_utc,serie,valor
+2026-11-12T17:39:47+00:00,"instance=registry-pt-aveiro-dc1-r01-n01.incus:5050, name=sensor",2.0
+2026-11-12T17:40:02+00:00,"instance=registry-pt-aveiro-dc1-r01-n01.incus:5050, name=sensor",2.0
+2026-11-12T17:40:17+00:00,"instance=registry-pt-aveiro-dc1-r01-n01.incus:5050, name=sensor",0.0
+2026-11-12T17:40:32+00:00,"instance=registry-pt-aveiro-dc1-r01-n01.incus:5050, name=sensor",2.0
+2026-11-12T17:40:47+00:00,"instance=registry-pt-aveiro-dc1-r01-n01.incus:5050, name=sensor",2.0
+2026-11-12T17:41:02+00:00,"instance=registry-pt-aveiro-dc1-r01-n01.incus:5050, name=sensor",32.0
+2026-11-12T17:41:17+00:00,"instance=registry-pt-aveiro-dc1-r01-n01.incus:5050, name=sensor",2.0
+2026-11-12T17:41:32+00:00,"instance=registry-pt-aveiro-dc1-r01-n01.incus:5050, name=sensor",2.0
+2026-11-12T17:41:47+00:00,"instance=registry-pt-aveiro-dc1-r01-n01.incus:5050, name=sensor",2.0
+2026-11-12T17:42:02+00:00,"instance=registry-pt-aveiro-dc1-r01-n01.incus:5050, name=sensor",2.0
+2026-11-12T17:42:17+00:00,"instance=registry-pt-aveiro-dc1-r01-n01.incus:5050, name=sensor",2.0

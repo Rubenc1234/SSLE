@@ -1,0 +1,16 @@
+time_utc,serie,valor
+2026-11-14T14:28:25+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.0789371086516791
+2026-11-14T14:28:40+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.15054850513340406
+2026-11-14T14:28:55+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",2.0460342374016403
+2026-11-14T14:29:10+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.1653426619529408
+2026-11-14T14:29:25+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.5520528313578205
+2026-11-14T14:29:40+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.6065834197754408
+2026-11-14T14:29:55+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.6661808832318936
+2026-11-14T14:30:10+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.5782823666940144
+2026-11-14T14:30:25+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.6105847804231672
+2026-11-14T14:30:40+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.2762206025709257
+2026-11-14T14:30:55+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.310983446251562
+2026-11-14T14:31:10+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.23839734980522284
+2026-11-14T14:31:25+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.3004335603887091
+2026-11-14T14:31:40+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.30489690930314717
+2026-11-14T14:31:55+00:00,"container=ingestion-pt-aveiro-dc1-r01-n02, instance=10.255.255.1:9101",0.33185157720631475

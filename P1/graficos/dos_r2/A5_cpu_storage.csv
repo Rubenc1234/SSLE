@@ -1,0 +1,16 @@
+time_utc,serie,valor
+2026-11-14T12:18:50+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",0.6424369637052952
+2026-11-14T12:19:05+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",0.4553434925663854
+2026-11-14T12:19:20+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",6.199601248016496
+2026-11-14T12:19:35+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",0.28590043011572275
+2026-11-14T12:19:50+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",0.2594231484744557
+2026-11-14T12:20:05+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",19.256778004260262
+2026-11-14T12:20:20+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",27.614278994298235
+2026-11-14T12:20:35+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",26.286476223385396
+2026-11-14T12:20:50+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",14.772677915955185
+2026-11-14T12:21:05+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",0.3689601741992355
+2026-11-14T12:21:20+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",0.3231694414138233
+2026-11-14T12:21:35+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",0.258092751914754
+2026-11-14T12:21:50+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",0.32650847633260655
+2026-11-14T12:22:05+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",0.318590336832913
+2026-11-14T12:22:20+00:00,"container=storage-pt-aveiro-dc1-r02-n01, instance=10.255.255.1:9101",0.25740885696601057
