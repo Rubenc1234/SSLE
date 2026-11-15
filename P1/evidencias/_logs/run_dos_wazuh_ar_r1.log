@@ -1,0 +1,57 @@
+[*] A repor estado limpo (restart dos serviços)...
+[*] A iniciar execução do ataque: dos
+
+========================================
+ SSLE - EXPERIMENTAÇÃO DE ATAQUES
+========================================
+Modo:       dos-flood
+Registry:   http://registry-pt-aveiro-dc1-r01-n01.incus:5050
+Ingestion:  http://ingestion-pt-aveiro-dc1-r01-n02.incus:5001
+Storage:    http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+========================================
+
+[A1] DoS Flood: 3000 pedidos com concorrência 30.
+
+=======================================================
+ RELATÓRIO: DOS-FLOOD
+=======================================================
+Duração:             82.9502 s
+Pedidos:             1113
+Respostas HTTP 2xx:  356
+Pedidos/segundo:     13.42
+Latência média:      2219.35 ms
+Códigos HTTP:        {'200': 356}
+Erros:               {'ReadTimeout': 8, 'ConnectTimeout': 749}
+Fases:               {'ingestion': 1113, 'skipped_deadline': 1887}
+=======================================================
+
+
+[+] Execução concluída.
+
+[*] A recolher telemetria e métricas pós-ataque...
+=== TELEMETRIA SSLE [DOS_WAZUH_AR_R1] - 2026-11-14 22:04:26 ===
+
+[+] A recolher metricas de Infraestrutura (Incus)...
+ -> registry-pt-aveiro-dc1-r01-n01: CPU media=0.66%, CPU max=1.46%, RAM media=178.35 MiB, RAM max=178.43 MiB
+ -> storage-pt-aveiro-dc1-r02-n01: CPU media=1.38%, CPU max=15.28%, RAM media=97.24 MiB, RAM max=98.96 MiB
+ -> ingestion-pt-aveiro-dc1-r01-n02: CPU media=2.08%, CPU max=21.45%, RAM media=275.64 MiB, RAM max=277.46 MiB
+ -> analytics-pt-aveiro-dc1-r02-n02: CPU media=0.14%, CPU max=0.33%, RAM media=103.56 MiB, RAM max=103.56 MiB
+
+[+] A recolher metricas RED por Servico...
+ -> registry-pt-aveiro-dc1-r01-n01: RPS=1.385, Erros/s=0.000, Latencia p95=0.0048s
+ -> storage-pt-aveiro-dc1-r02-n01: RPS=2.955, Erros/s=0.000, Latencia p95=2.2455s
+ -> ingestion-pt-aveiro-dc1-r01-n02: RPS=3.127, Erros/s=0.000, Latencia p95=2.2771s
+ -> analytics-pt-aveiro-dc1-r02-n02: RPS=0.067, Erros/s=0.000, Latencia p95=0.0047s
+
+[+] A recolher metrica de Payload Size (Ramo A / A2)...
+ -> Payload p95 (Ingestion): 95.00 bytes
+
+[+] A recolher metricas de Negocio (Ramos B e C)...
+ -> Registos de Sensores (10m): 0
+ -> Dispositivos Unicos (Storage): 3
+ -> Registry Overwrites: 0
+ -> Entradas 'storage-service' no Registry: 1
+ -> Entradas 'ingestion-service' no Registry: 1
+
+[INFO] Relatorio guardado com sucesso em 'ssle_report_dos_wazuh_ar_r1.json'!
+[OK] Teste concluído com sucesso! Evidências guardadas em: evidencias/dos_wazuh_ar_r1

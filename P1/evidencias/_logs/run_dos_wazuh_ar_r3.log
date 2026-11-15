@@ -1,0 +1,123 @@
++ set -uo pipefail
+++ dirname ./run_attack.sh
++ source ./infra/lib.sh
+++ set -euo pipefail
+++++ dirname ./infra/lib.sh
++++ cd ./infra/..
++++ pwd
+++ ROOT='/home/ssle/Área de Trabalho/SSLE/P1'
+++ IMAGE=ssle-base
+++ COUNTRY=pt
+++ REGION=aveiro
+++ DC=dc1
++++ cname registry r01 n01
++++ echo registry-pt-aveiro-dc1-r01-n01
+++ REGISTRY=registry-pt-aveiro-dc1-r01-n01
++++ cname ingestion r01 n02
++++ echo ingestion-pt-aveiro-dc1-r01-n02
+++ INGESTION=ingestion-pt-aveiro-dc1-r01-n02
++++ cname storage r02 n01
++++ echo storage-pt-aveiro-dc1-r02-n01
+++ STORAGE=storage-pt-aveiro-dc1-r02-n01
++++ cname analytics r02 n02
++++ echo analytics-pt-aveiro-dc1-r02-n02
+++ ANALYTICS=analytics-pt-aveiro-dc1-r02-n02
+++ REGISTRY_URL=http://registry-pt-aveiro-dc1-r01-n01.incus:5050
++ ATTACK=dos
++ RUN=wazuh_ar_r3
++ ATTACKER=attacker-pt-aveiro-dc1-r99-n99
++ LABEL=dos_wazuh_ar_r3
++ OUT=evidencias/dos_wazuh_ar_r3
++ mkdir -p evidencias/dos_wazuh_ar_r3
++ case "$ATTACK" in
++ CMD=(run_attacker dos-flood --requests 3000 --concurrency 30 --max-seconds 80)
++ echo '[*] A repor estado limpo (restart dos serviços)...'
+[*] A repor estado limpo (restart dos serviços)...
++ for c in "$REGISTRY" "$STORAGE" "$INGESTION"
++ incus exec registry-pt-aveiro-dc1-r01-n01 -- systemctl restart ssle
++ for c in "$REGISTRY" "$STORAGE" "$INGESTION"
++ incus exec storage-pt-aveiro-dc1-r02-n01 -- systemctl restart ssle
++ for c in "$REGISTRY" "$STORAGE" "$INGESTION"
++ incus exec ingestion-pt-aveiro-dc1-r01-n02 -- systemctl restart ssle
++ sleep 40
+++ date +%s
++ START=1794691715
++ echo label=dos_wazuh_ar_r3
+++ date -Is
++ echo start=2026-11-14T21:28:35+00:00
++ echo '[*] A iniciar execução do ataque: dos'
+[*] A iniciar execução do ataque: dos
++ run_attacker dos-flood --requests 3000 --concurrency 30 --max-seconds 80
++ tee evidencias/dos_wazuh_ar_r3/attacker_output.txt
++ timeout -k 5 100 incus exec attacker-pt-aveiro-dc1-r99-n99 -- timeout -k 5 90 env REGISTRY_URL=http://registry-pt-aveiro-dc1-r01-n01.incus:5050 INGESTION_URL=http://ingestion-pt-aveiro-dc1-r01-n02.incus:5001 STORAGE_URL=http://storage-pt-aveiro-dc1-r02-n01.incus:5002 python3 /root/attacker.py dos-flood --requests 3000 --concurrency 30 --max-seconds 80
+
+========================================
+ SSLE - EXPERIMENTAÇÃO DE ATAQUES
+========================================
+Modo:       dos-flood
+Registry:   http://registry-pt-aveiro-dc1-r01-n01.incus:5050
+Ingestion:  http://ingestion-pt-aveiro-dc1-r01-n02.incus:5001
+Storage:    http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+========================================
+
+[A1] DoS Flood: 3000 pedidos com concorrência 30.
+
+=======================================================
+ RELATÓRIO: DOS-FLOOD
+=======================================================
+Duração:             82.2529 s
+Pedidos:             1107
+Respostas HTTP 2xx:  340
+Pedidos/segundo:     13.46
+Latência média:      2209.07 ms
+Códigos HTTP:        {'200': 340}
+Erros:               {'ReadTimeout': 17, 'ConnectTimeout': 750}
+Fases:               {'ingestion': 1107, 'skipped_deadline': 1893}
+=======================================================
+
+
+[+] Execução concluída.
+
+++ date +%s
++ END=1794691797
++ DUR=82
+++ date -Is
++ echo end=2026-11-14T21:29:57+00:00
++ echo duration_s=82
++ sleep 20
++ W=102
++ '[' 102 -lt 60 ']'
++ echo window_s=102
++ echo '[*] A recolher telemetria e métricas pós-ataque...'
+[*] A recolher telemetria e métricas pós-ataque...
+++ date +%s
++ python3 monitoring/collect_baseline.py --label dos_wazuh_ar_r3 --window 102s --at 1794691817
+=== TELEMETRIA SSLE [DOS_WAZUH_AR_R3] - 2026-11-14 21:30:18 ===
+
+[+] A recolher metricas de Infraestrutura (Incus)...
+ -> registry-pt-aveiro-dc1-r01-n01: CPU media=0.57%, CPU max=0.83%, RAM media=178.94 MiB, RAM max=179.00 MiB
+ -> storage-pt-aveiro-dc1-r02-n01: CPU media=2.50%, CPU max=13.96%, RAM media=99.93 MiB, RAM max=102.81 MiB
+ -> ingestion-pt-aveiro-dc1-r01-n02: CPU media=3.68%, CPU max=20.48%, RAM media=276.61 MiB, RAM max=278.54 MiB
+ -> analytics-pt-aveiro-dc1-r02-n02: CPU media=0.13%, CPU max=0.19%, RAM media=103.58 MiB, RAM max=103.59 MiB
+
+[+] A recolher metricas RED por Servico...
+ -> registry-pt-aveiro-dc1-r01-n01: RPS=1.360, Erros/s=0.000, Latencia p95=0.0047s
+ -> storage-pt-aveiro-dc1-r02-n01: RPS=3.360, Erros/s=0.000, Latencia p95=2.4609s
+ -> ingestion-pt-aveiro-dc1-r01-n02: RPS=2.878, Erros/s=0.000, Latencia p95=2.4380s
+ -> analytics-pt-aveiro-dc1-r02-n02: RPS=0.067, Erros/s=0.000, Latencia p95=0.0047s
+
+[+] A recolher metrica de Payload Size (Ramo A / A2)...
+ -> Payload p95 (Ingestion): 95.00 bytes
+
+[+] A recolher metricas de Negocio (Ramos B e C)...
+ -> Registos de Sensores (10m): 0
+ -> Dispositivos Unicos (Storage): 3
+ -> Registry Overwrites: 0
+ -> Entradas 'storage-service' no Registry: 1
+ -> Entradas 'ingestion-service' no Registry: 1
+
+[INFO] Relatorio guardado com sucesso em 'ssle_report_dos_wazuh_ar_r3.json'!
++ '[' -f ssle_report_dos_wazuh_ar_r3.json ']'
++ mv ssle_report_dos_wazuh_ar_r3.json evidencias/dos_wazuh_ar_r3/
++ echo '[OK] Teste concluído com sucesso! Evidências guardadas em: evidencias/dos_wazuh_ar_r3'
+[OK] Teste concluído com sucesso! Evidências guardadas em: evidencias/dos_wazuh_ar_r3

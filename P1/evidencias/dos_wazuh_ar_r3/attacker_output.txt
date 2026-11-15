@@ -1,0 +1,29 @@
++ timeout -k 5 100 incus exec attacker-pt-aveiro-dc1-r99-n99 -- timeout -k 5 90 env REGISTRY_URL=http://registry-pt-aveiro-dc1-r01-n01.incus:5050 INGESTION_URL=http://ingestion-pt-aveiro-dc1-r01-n02.incus:5001 STORAGE_URL=http://storage-pt-aveiro-dc1-r02-n01.incus:5002 python3 /root/attacker.py dos-flood --requests 3000 --concurrency 30 --max-seconds 80
+
+========================================
+ SSLE - EXPERIMENTAÇÃO DE ATAQUES
+========================================
+Modo:       dos-flood
+Registry:   http://registry-pt-aveiro-dc1-r01-n01.incus:5050
+Ingestion:  http://ingestion-pt-aveiro-dc1-r01-n02.incus:5001
+Storage:    http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+========================================
+
+[A1] DoS Flood: 3000 pedidos com concorrência 30.
+
+=======================================================
+ RELATÓRIO: DOS-FLOOD
+=======================================================
+Duração:             82.2529 s
+Pedidos:             1107
+Respostas HTTP 2xx:  340
+Pedidos/segundo:     13.46
+Latência média:      2209.07 ms
+Códigos HTTP:        {'200': 340}
+Erros:               {'ReadTimeout': 17, 'ConnectTimeout': 750}
+Fases:               {'ingestion': 1107, 'skipped_deadline': 1893}
+=======================================================
+
+
+[+] Execução concluída.
+

@@ -1,0 +1,5 @@
+label=botnet_wazuh_ar_a_r1
+start=2026-11-14T19:27:31+00:00
+end=2026-11-14T19:27:51+00:00
+duration_s=20
+window_s=60
