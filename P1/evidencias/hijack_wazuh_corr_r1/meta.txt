@@ -1,0 +1,6 @@
+label=hijack_wazuh_corr_r1
+start=2026-11-15T20:47:07+00:00
+end=2026-11-15T20:47:08+00:00
+duration_s=1
+at_epoch=1794775697
+window_s=90
