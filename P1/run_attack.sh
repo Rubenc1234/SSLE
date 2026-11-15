@@ -10,6 +10,7 @@ RUN=${2:-r1}
 ATTACKER=attacker-pt-aveiro-dc1-r99-n99
 LABEL="${ATTACK}_${RUN}"
 OUT="evidencias/$LABEL"
+if [ -e "$OUT/meta.txt" ]; then echo "[ERRO] $OUT ja existe"; exit 1; fi
 mkdir -p "$OUT"
 
 # Comando comum: o attacker.py recebe os URLs por variáveis de ambiente
@@ -61,17 +62,22 @@ echo "duration_s=$DUR"       >> "$OUT/meta.txt"
 
 # 4) Aguardar o Prometheus fazer o scrape e recolher a telemetria com janela calculada
 sleep 20
-W=$(( DUR + 20 )); [ "$W" -lt 60 ] && W=60
+case "$ATTACK" in
+    dos|normal) W=150; OFFSET=130 ;;
+    *)          W=90;  OFFSET=70  ;;
+esac
+AT=$(( START + OFFSET ))
+NOW=$(date +%s)
+[ "$NOW" -lt "$(( AT + 5 ))" ] && sleep $(( AT + 5 - NOW ))
+echo "at_epoch=$AT" >> "$OUT/meta.txt"
 echo "window_s=$W"           >> "$OUT/meta.txt"
 
 echo "[*] A recolher telemetria e métricas pós-ataque..."
-python3 monitoring/collect_baseline.py --label "$LABEL" --window "${W}s" --at "$(date +%s)" 2>/dev/null || python3 monitoring/collect_baseline.py
+python3 monitoring/collect_baseline.py --label "$LABEL" --window "${W}s" --at "$AT" || echo "[ERRO] collect_baseline falhou"
 
 # Mover o relatório gerado para a pasta de evidências
 if [ -f "ssle_report_$LABEL.json" ]; then
     mv "ssle_report_$LABEL.json" "$OUT/"
-elif [ -f "ssle_report_baseline.json" ]; then
-    mv "ssle_report_baseline.json" "$OUT/ssle_report_$LABEL.json"
 fi
 
 echo "[OK] Teste concluído com sucesso! Evidências guardadas em: $OUT"
