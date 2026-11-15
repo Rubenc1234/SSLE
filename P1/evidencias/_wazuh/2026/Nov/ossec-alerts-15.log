@@ -1,0 +1,1267 @@
+** Alert 1794753704.0: - ossec,pci_dss_10.6.1,pci_dss_10.2.6,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.6,nist_800_53_AU.14,nist_800_53_AU.5,tsc_CC7.2,tsc_CC7.3,tsc_CC6.8,
+2026 Nov 15 14:41:44 (ingestion-pt-aveiro-dc1-r01-n02) any->wazuh-agent
+Rule: 503 (level 3) -> 'Wazuh agent started.'
+ossec: Agent started: 'ingestion-pt-aveiro-dc1-r01-n02->any'.
+
+** Alert 1794753704.367: - ossec,pci_dss_10.6.1,pci_dss_10.2.6,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.6,nist_800_53_AU.14,nist_800_53_AU.5,tsc_CC7.2,tsc_CC7.3,tsc_CC6.8,
+2026 Nov 15 14:41:44 (registry-pt-aveiro-dc1-r01-n01) any->wazuh-agent
+Rule: 503 (level 3) -> 'Wazuh agent started.'
+ossec: Agent started: 'registry-pt-aveiro-dc1-r01-n01->any'.
+
+** Alert 1794753704.734: - ossec,pci_dss_10.2.7,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AU.6,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 14:41:44 (ingestion-pt-aveiro-dc1-r01-n02) any->netstat listening ports
+Rule: 533 (level 7) -> 'Listened ports status (netstat) changed (new port opened or closed).'
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 10.255.255.215:68 0.0.0.0:* 165/systemd-network
+tcp 0.0.0.0:5001 0.0.0.0:* 199/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+tcp6 :::5355 :::* 150/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+udp6 :::5355 :::* 150/systemd-resolve
+Previous output:
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 152/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 152/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 152/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 152/systemd-resolve
+udp 10.255.255.215:68 0.0.0.0:* 164/systemd-network
+tcp 0.0.0.0:5001 0.0.0.0:* 33435/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 152/systemd-resolve
+tcp6 :::5355 :::* 152/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 152/systemd-resolve
+udp6 :::5355 :::* 152/systemd-resolve
+
+** Alert 1794753704.2093: - ossec,rootcheck,pci_dss_10.6.1,gdpr_IV_35.7.d,
+2026 Nov 15 14:41:44 wazuh-container->rootcheck
+Rule: 510 (level 7) -> 'Host-based anomaly detection event (rootcheck).'
+File '/dev/.lxc-boot-id' present on /dev. Possible hidden file.
+title: File present on /dev.
+file: /dev/.lxc-boot-id
+
+** Alert 1794753705.2407: - ossec,pci_dss_10.2.7,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AU.6,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 14:41:45 (registry-pt-aveiro-dc1-r01-n01) any->netstat listening ports
+Rule: 533 (level 7) -> 'Listened ports status (netstat) changed (new port opened or closed).'
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 10.255.255.216:68 0.0.0.0:* 161/systemd-network
+tcp 0.0.0.0:5050 0.0.0.0:* 170/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+tcp6 :::5355 :::* 139/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+udp6 :::5355 :::* 139/systemd-resolve
+Previous output:
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 138/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 138/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 138/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 138/systemd-resolve
+udp 10.255.255.216:68 0.0.0.0:* 165/systemd-network
+tcp 0.0.0.0:5050 0.0.0.0:* 56181/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 138/systemd-resolve
+tcp6 :::5355 :::* 138/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 138/systemd-resolve
+udp6 :::5355 :::* 138/systemd-resolve
+
+** Alert 1794753708.3766: - sca,gdpr_IV_35.7.d,pci_dss_2.2,nist_800_53_CM.1,tsc_CC7.1,tsc_CC7.2,
+2026 Nov 15 14:41:48 (ingestion-pt-aveiro-dc1-r01-n02) any->sca
+Rule: 19010 (level 3) -> 'Center for Internet Security Debian Linux 13 Benchmark: Ensure nftables default deny firewall policy.: Status changed from failed to passed'
+{"type":"check","id":474075866,"policy":"Center for Internet Security Debian Linux 13 Benchmark","policy_id":"cis_debian13","check":{"id":42084,"title":"Ensure nftables default deny firewall policy.","description":"Base chain policy is the default verdict that will be applied to packets reaching the end of the chain.","rationale":"There are two policies: accept (Default) and drop. If the policy is set to accept, the firewall will accept any packet that is not configured to be denied and the packet will continue transversing the network stack. It is easier to allow list acceptable usage than to deny list unacceptable usage. Note: - Allow port 22(ssh) needs to be updated to only allow systems requiring ssh connectivity to connect, as per site policy. - Changing firewall settings while connected over network can result in being locked out of the system.","remediation":"Run the following command for the base chains with the input, forward, and output hooks to implement a default DROP policy: # nft chain <table family> <table name> <chain name> { policy drop \\; } Example: # nft chain inet filter input { policy drop \\; } # nft chain inet filter forward { policy drop \\; } # nft chain inet filter output { policy drop \\; }.","compliance":{"cis":"4.3.8","cis_csc_v8":"4.4,4.5","cis_csc_v7":"9.4","cmmc_v2.0":"AC.L1-3.1.20,CM.L2-3.4.7,SC.L1-3.13.1,SC.L2-3.13.6","iso_27001-2013":"A.13.1.1","mitre_mitigations":"M1031,M1037","mitre_tactics":"TA0011","mitre_techniques":"T1562,T1562.004","nist_sp_800-53":"SC-7(5)","pci_dss_v3.2.1":"1.1.4,1.3.1,1.4","pci_dss_v4.0":"1.2.1,1.4.1","soc_2":"CC6.6"},"rules":["not c:nft list ruleset -> r:hook input && !r:policy drop","not c:nft list ruleset -> r:hook forward && !r:policy drop","not c:nft list ruleset -> r:hook output && !r:policy drop"],"condition":"all","command":"nft list ruleset","result":"passed"}}
+sca.type: check
+sca.scan_id: 474075866
+sca.policy: Center for Internet Security Debian Linux 13 Benchmark
+sca.check.id: 42084
+sca.check.title: Ensure nftables default deny firewall policy.
+sca.check.description: Base chain policy is the default verdict that will be applied to packets reaching the end of the chain.
+sca.check.rationale: There are two policies: accept (Default) and drop. If the policy is set to accept, the firewall will accept any packet that is not configured to be denied and the packet will continue transversing the network stack. It is easier to allow list acceptable usage than to deny list unacceptable usage. Note: - Allow port 22(ssh) needs to be updated to only allow systems requiring ssh connectivity to connect, as per site policy. - Changing firewall settings while connected over network can result in being locked out of the system.
+sca.check.remediation: Run the following command for the base chains with the input, forward, and output hooks to implement a default DROP policy: # nft chain <table family> <table name> <chain name> { policy drop \; } Example: # nft chain inet filter input { policy drop \; } # nft chain inet filter forward { policy drop \; } # nft chain inet filter output { policy drop \; }.
+sca.check.compliance.cis: 4.3.8
+sca.check.compliance.cis_csc_v8: 4.4,4.5
+sca.check.compliance.cis_csc_v7: 9.4
+sca.check.compliance.cmmc_v2.0: AC.L1-3.1.20,CM.L2-3.4.7,SC.L1-3.13.1,SC.L2-3.13.6
+sca.check.compliance.iso_27001-2013: A.13.1.1
+sca.check.compliance.mitre_mitigations: M1031,M1037
+sca.check.compliance.mitre_tactics: TA0011
+sca.check.compliance.mitre_techniques: T1562,T1562.004
+sca.check.compliance.nist_sp_800-53: SC-7(5)
+sca.check.compliance.pci_dss_v3.2.1: 1.1.4,1.3.1,1.4
+sca.check.compliance.pci_dss_v4.0: 1.2.1,1.4.1
+sca.check.compliance.soc_2: CC6.6
+sca.check.command: ["nft list ruleset"]
+sca.check.result: passed
+sca.check.previous_result: failed
+
+** Alert 1794753708.7872: - ossec,rootcheck,pci_dss_10.6.1,gdpr_IV_35.7.d,
+2026 Nov 15 14:41:48 (ingestion-pt-aveiro-dc1-r01-n02) any->rootcheck
+Rule: 510 (level 7) -> 'Host-based anomaly detection event (rootcheck).'
+File '/dev/.lxc-boot-id' present on /dev. Possible hidden file.
+title: File present on /dev.
+file: /dev/.lxc-boot-id
+
+** Alert 1794753711.8208: - ossec,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.6,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 14:41:51 wazuh-container->wazuh-monitord
+Rule: 502 (level 3) -> 'Wazuh server started.'
+ossec: Manager started.
+
+** Alert 1794753711.8462: - ossec,rootcheck,pci_dss_10.6.1,gdpr_IV_35.7.d,
+2026 Nov 15 14:41:51 (registry-pt-aveiro-dc1-r01-n01) any->rootcheck
+Rule: 510 (level 7) -> 'Host-based anomaly detection event (rootcheck).'
+File '/dev/.lxc-boot-id' present on /dev. Possible hidden file.
+title: File present on /dev.
+file: /dev/.lxc-boot-id
+
+** Alert 1794753711.8797: - sca,gdpr_IV_35.7.d,pci_dss_2.2,nist_800_53_CM.1,tsc_CC7.1,tsc_CC7.2,
+2026 Nov 15 14:41:51 (registry-pt-aveiro-dc1-r01-n01) any->sca
+Rule: 19010 (level 3) -> 'Center for Internet Security Debian Linux 13 Benchmark: Ensure nftables default deny firewall policy.: Status changed from failed to passed'
+{"type":"check","id":650427229,"policy":"Center for Internet Security Debian Linux 13 Benchmark","policy_id":"cis_debian13","check":{"id":42084,"title":"Ensure nftables default deny firewall policy.","description":"Base chain policy is the default verdict that will be applied to packets reaching the end of the chain.","rationale":"There are two policies: accept (Default) and drop. If the policy is set to accept, the firewall will accept any packet that is not configured to be denied and the packet will continue transversing the network stack. It is easier to allow list acceptable usage than to deny list unacceptable usage. Note: - Allow port 22(ssh) needs to be updated to only allow systems requiring ssh connectivity to connect, as per site policy. - Changing firewall settings while connected over network can result in being locked out of the system.","remediation":"Run the following command for the base chains with the input, forward, and output hooks to implement a default DROP policy: # nft chain <table family> <table name> <chain name> { policy drop \\; } Example: # nft chain inet filter input { policy drop \\; } # nft chain inet filter forward { policy drop \\; } # nft chain inet filter output { policy drop \\; }.","compliance":{"cis":"4.3.8","cis_csc_v8":"4.4,4.5","cis_csc_v7":"9.4","cmmc_v2.0":"AC.L1-3.1.20,CM.L2-3.4.7,SC.L1-3.13.1,SC.L2-3.13.6","iso_27001-2013":"A.13.1.1","mitre_mitigations":"M1031,M1037","mitre_tactics":"TA0011","mitre_techniques":"T1562,T1562.004","nist_sp_800-53":"SC-7(5)","pci_dss_v3.2.1":"1.1.4,1.3.1,1.4","pci_dss_v4.0":"1.2.1,1.4.1","soc_2":"CC6.6"},"rules":["not c:nft list ruleset -> r:hook input && !r:policy drop","not c:nft list ruleset -> r:hook forward && !r:policy drop","not c:nft list ruleset -> r:hook output && !r:policy drop"],"condition":"all","command":"nft list ruleset","result":"passed"}}
+sca.type: check
+sca.scan_id: 650427229
+sca.policy: Center for Internet Security Debian Linux 13 Benchmark
+sca.check.id: 42084
+sca.check.title: Ensure nftables default deny firewall policy.
+sca.check.description: Base chain policy is the default verdict that will be applied to packets reaching the end of the chain.
+sca.check.rationale: There are two policies: accept (Default) and drop. If the policy is set to accept, the firewall will accept any packet that is not configured to be denied and the packet will continue transversing the network stack. It is easier to allow list acceptable usage than to deny list unacceptable usage. Note: - Allow port 22(ssh) needs to be updated to only allow systems requiring ssh connectivity to connect, as per site policy. - Changing firewall settings while connected over network can result in being locked out of the system.
+sca.check.remediation: Run the following command for the base chains with the input, forward, and output hooks to implement a default DROP policy: # nft chain <table family> <table name> <chain name> { policy drop \; } Example: # nft chain inet filter input { policy drop \; } # nft chain inet filter forward { policy drop \; } # nft chain inet filter output { policy drop \; }.
+sca.check.compliance.cis: 4.3.8
+sca.check.compliance.cis_csc_v8: 4.4,4.5
+sca.check.compliance.cis_csc_v7: 9.4
+sca.check.compliance.cmmc_v2.0: AC.L1-3.1.20,CM.L2-3.4.7,SC.L1-3.13.1,SC.L2-3.13.6
+sca.check.compliance.iso_27001-2013: A.13.1.1
+sca.check.compliance.mitre_mitigations: M1031,M1037
+sca.check.compliance.mitre_tactics: TA0011
+sca.check.compliance.mitre_techniques: T1562,T1562.004
+sca.check.compliance.nist_sp_800-53: SC-7(5)
+sca.check.compliance.pci_dss_v3.2.1: 1.1.4,1.3.1,1.4
+sca.check.compliance.pci_dss_v4.0: 1.2.1,1.4.1
+sca.check.compliance.soc_2: CC6.6
+sca.check.command: ["nft list ruleset"]
+sca.check.result: passed
+sca.check.previous_result: failed
+
+** Alert 1794753717.12902: - sca,gdpr_IV_35.7.d,pci_dss_2.2,nist_800_53_CM.1,tsc_CC7.1,tsc_CC7.2,
+2026 Nov 15 14:41:57 (ingestion-pt-aveiro-dc1-r01-n02) any->sca
+Rule: 19004 (level 7) -> 'SCA summary: Center for Internet Security Debian Linux 13 Benchmark: Score less than 50% (42)'
+{"type":"summary","scan_id":474075866,"name":"Center for Internet Security Debian Linux 13 Benchmark","policy_id":"cis_debian13","file":"cis_debian13.yml","description":"This document provides prescriptive guidance for establishing a secure configuration posture for Debian Linux 13. This document was tested against Debian 13. This document is based on Center for Internet Security Debian 13 Benchmark v1.1.0.","references":"https://www.cisecurity.org/cis-benchmarks/","passed":71,"failed":96,"invalid":40,"total_checks":207,"score":42.514972686767578,"start_time":1794753670,"end_time":1794753676,"hash":"a4add9aca3ce3c654fd14b28598badd906b6cbf434d7440f3e4370ea43a00489","hash_file":"4f0b2524caa89064e5dc74c9fc0005c7018f366a5478847bf665b2928ac41513","force_alert":"1"}
+sca.type: summary
+sca.scan_id: 474075866
+sca.policy: Center for Internet Security Debian Linux 13 Benchmark
+sca.description: This document provides prescriptive guidance for establishing a secure configuration posture for Debian Linux 13. This document was tested against Debian 13. This document is based on Center for Internet Security Debian 13 Benchmark v1.1.0.
+sca.policy_id: cis_debian13
+sca.passed: 71
+sca.failed: 96
+sca.invalid: 40
+sca.total_checks: 207
+sca.score: 42
+sca.file: cis_debian13.yml
+
+** Alert 1794753719.14460: - sca,gdpr_IV_35.7.d,pci_dss_2.2,nist_800_53_CM.1,tsc_CC7.1,tsc_CC7.2,
+2026 Nov 15 14:41:59 (registry-pt-aveiro-dc1-r01-n01) any->sca
+Rule: 19004 (level 7) -> 'SCA summary: Center for Internet Security Debian Linux 13 Benchmark: Score less than 50% (42)'
+{"type":"summary","scan_id":650427229,"name":"Center for Internet Security Debian Linux 13 Benchmark","policy_id":"cis_debian13","file":"cis_debian13.yml","description":"This document provides prescriptive guidance for establishing a secure configuration posture for Debian Linux 13. This document was tested against Debian 13. This document is based on Center for Internet Security Debian 13 Benchmark v1.1.0.","references":"https://www.cisecurity.org/cis-benchmarks/","passed":71,"failed":96,"invalid":40,"total_checks":207,"score":42.514972686767578,"start_time":1794753674,"end_time":1794753679,"hash":"a4add9aca3ce3c654fd14b28598badd906b6cbf434d7440f3e4370ea43a00489","hash_file":"4f0b2524caa89064e5dc74c9fc0005c7018f366a5478847bf665b2928ac41513","force_alert":"1"}
+sca.type: summary
+sca.scan_id: 650427229
+sca.policy: Center for Internet Security Debian Linux 13 Benchmark
+sca.description: This document provides prescriptive guidance for establishing a secure configuration posture for Debian Linux 13. This document was tested against Debian 13. This document is based on Center for Internet Security Debian 13 Benchmark v1.1.0.
+sca.policy_id: cis_debian13
+sca.passed: 71
+sca.failed: 96
+sca.invalid: 40
+sca.total_checks: 207
+sca.score: 42
+sca.file: cis_debian13.yml
+
+** Alert 1794763613.16017: - ssle,ssle_botnet,
+2026 Nov 15 17:26:53 (registry-pt-aveiro-dc1-r01-n01) any->/var/log/ssle/access.log
+Rule: 100211 (level 10) -> 'SSLE: rajada de POST /register do mesmo IP (possivel botnet)'
+Src IP: 10.255.255.48
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+method: POST
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:50] "POST /register HTTP/1.1" 200 -
+
+** Alert 1794763615.17004: - ssle,ssle_dos,
+2026 Nov 15 17:26:55 (ingestion-pt-aveiro-dc1-r01-n02) any->/var/log/ssle/access.log
+Rule: 100201 (level 10) -> 'SSLE: flood de POST /ingest do mesmo IP (possivel DoS)'
+Src IP: 10.255.255.48
+10.255.255.48 - - [15/Nov/2026 17:26:54] "POST /ingest HTTP/1.1" 200 -
+method: POST
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+
+** Alert 1794763615.18105: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:26:55 (registry-pt-aveiro-dc1-r01-n01) any->/var/ossec/logs/active-responses.log
+Rule: 651 (level 3) -> 'Host Blocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:26:53 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"add","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:26:53.684+0000","rule":{"level":10,"description":"SSLE: rajada de POST /register do mesmo IP (possivel botnet)","id":"100211","frequency":10,"firedtimes":1,"mail":false,"groups":["ssle","ssle_botnet"]},"agent":{"id":"001","name":"registry-pt-aveiro-dc1-r01-n01","ip":"10.255.255.216"},"manager":{"name":"wazuh-container"},"id":"1794763613.16017","previous_output":"10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:50] \"POST /register HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/register","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: add
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:26:53.684+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: rajada de POST /register do mesmo IP (possivel botnet)
+parameters.alert.rule.id: 100211
+parameters.alert.rule.frequency: 10
+parameters.alert.rule.firedtimes: 1
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_botnet"]
+parameters.alert.agent.id: 001
+parameters.alert.agent.name: registry-pt-aveiro-dc1-r01-n01
+parameters.alert.agent.ip: 10.255.255.216
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794763613.16017
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:50] "POST /register HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /register
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794763617.21586: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:26:57 (ingestion-pt-aveiro-dc1-r01-n02) any->/var/ossec/logs/active-responses.log
+Rule: 651 (level 3) -> 'Host Blocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:26:55 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"add","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:26:55.631+0000","rule":{"level":10,"description":"SSLE: flood de POST /ingest do mesmo IP (possivel DoS)","id":"100201","frequency":100,"firedtimes":1,"mail":false,"groups":["ssle","ssle_dos"]},"agent":{"id":"002","name":"ingestion-pt-aveiro-dc1-r01-n02","ip":"10.255.255.215"},"manager":{"name":"wazuh-container"},"id":"1794763615.17004","previous_output":"10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/ingest","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: add
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:26:55.631+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: flood de POST /ingest do mesmo IP (possivel DoS)
+parameters.alert.rule.id: 100201
+parameters.alert.rule.frequency: 100
+parameters.alert.rule.firedtimes: 1
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_dos"]
+parameters.alert.agent.id: 002
+parameters.alert.agent.name: ingestion-pt-aveiro-dc1-r01-n02
+parameters.alert.agent.ip: 10.255.255.215
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794763615.17004
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /ingest
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794763675.25304: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:27:55 (registry-pt-aveiro-dc1-r01-n01) any->/var/ossec/logs/active-responses.log
+Rule: 652 (level 3) -> 'Host Unblocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:27:55 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"delete","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:26:53.684+0000","rule":{"level":10,"description":"SSLE: rajada de POST /register do mesmo IP (possivel botnet)","id":"100211","frequency":10,"firedtimes":1,"mail":false,"groups":["ssle","ssle_botnet"]},"agent":{"id":"001","name":"registry-pt-aveiro-dc1-r01-n01","ip":"10.255.255.216"},"manager":{"name":"wazuh-container"},"id":"1794763613.16017","previous_output":"10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:51] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:50] \"POST /register HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/register","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: delete
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:26:53.684+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: rajada de POST /register do mesmo IP (possivel botnet)
+parameters.alert.rule.id: 100211
+parameters.alert.rule.frequency: 10
+parameters.alert.rule.firedtimes: 1
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_botnet"]
+parameters.alert.agent.id: 001
+parameters.alert.agent.name: registry-pt-aveiro-dc1-r01-n01
+parameters.alert.agent.ip: 10.255.255.216
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794763613.16017
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:51] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:50] "POST /register HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /register
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794763677.28793: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:27:57 (ingestion-pt-aveiro-dc1-r01-n02) any->/var/ossec/logs/active-responses.log
+Rule: 652 (level 3) -> 'Host Unblocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:27:56 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"delete","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:26:55.631+0000","rule":{"level":10,"description":"SSLE: flood de POST /ingest do mesmo IP (possivel DoS)","id":"100201","frequency":100,"firedtimes":1,"mail":false,"groups":["ssle","ssle_dos"]},"agent":{"id":"002","name":"ingestion-pt-aveiro-dc1-r01-n02","ip":"10.255.255.215"},"manager":{"name":"wazuh-container"},"id":"1794763615.17004","previous_output":"10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:26:53] \"POST /ingest HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/ingest","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: delete
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:26:55.631+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: flood de POST /ingest do mesmo IP (possivel DoS)
+parameters.alert.rule.id: 100201
+parameters.alert.rule.frequency: 100
+parameters.alert.rule.firedtimes: 1
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_dos"]
+parameters.alert.agent.id: 002
+parameters.alert.agent.name: ingestion-pt-aveiro-dc1-r01-n02
+parameters.alert.agent.ip: 10.255.255.215
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794763615.17004
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:26:53] "POST /ingest HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /ingest
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794763755.32519: - ossec,pci_dss_10.2.7,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AU.6,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 17:29:15 (ingestion-pt-aveiro-dc1-r01-n02) any->netstat listening ports
+Rule: 533 (level 7) -> 'Listened ports status (netstat) changed (new port opened or closed).'
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 10.255.255.215:68 0.0.0.0:* 165/systemd-network
+tcp 0.0.0.0:5001 0.0.0.0:* 5714/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+tcp6 :::5355 :::* 150/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+udp6 :::5355 :::* 150/systemd-resolve
+Previous output:
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 10.255.255.215:68 0.0.0.0:* 165/systemd-network
+tcp 0.0.0.0:5001 0.0.0.0:* 199/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+tcp6 :::5355 :::* 150/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+udp6 :::5355 :::* 150/systemd-resolve
+
+** Alert 1794763763.33879: - ossec,pci_dss_10.2.7,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AU.6,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 17:29:23 (registry-pt-aveiro-dc1-r01-n01) any->netstat listening ports
+Rule: 533 (level 7) -> 'Listened ports status (netstat) changed (new port opened or closed).'
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 10.255.255.216:68 0.0.0.0:* 161/systemd-network
+tcp 0.0.0.0:5050 0.0.0.0:* 14528/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+tcp6 :::5355 :::* 139/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+udp6 :::5355 :::* 139/systemd-resolve
+Previous output:
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 10.255.255.216:68 0.0.0.0:* 161/systemd-network
+tcp 0.0.0.0:5050 0.0.0.0:* 170/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+tcp6 :::5355 :::* 139/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+udp6 :::5355 :::* 139/systemd-resolve
+
+** Alert 1794763849.35239: - ssle,ssle_botnet,
+2026 Nov 15 17:30:49 (registry-pt-aveiro-dc1-r01-n01) any->/var/log/ssle/access.log
+Rule: 100211 (level 10) -> 'SSLE: rajada de POST /register do mesmo IP (possivel botnet)'
+Src IP: 10.255.255.48
+10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+method: POST
+10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+
+** Alert 1794763851.36226: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:30:51 (registry-pt-aveiro-dc1-r01-n01) any->/var/ossec/logs/active-responses.log
+Rule: 651 (level 3) -> 'Host Blocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:30:50 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"add","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:30:49.994+0000","rule":{"level":10,"description":"SSLE: rajada de POST /register do mesmo IP (possivel botnet)","id":"100211","frequency":10,"firedtimes":3,"mail":false,"groups":["ssle","ssle_botnet"]},"agent":{"id":"001","name":"registry-pt-aveiro-dc1-r01-n01","ip":"10.255.255.216"},"manager":{"name":"wazuh-container"},"id":"1794763849.33879","previous_output":"10.255.255.48 - - [15/Nov/2026 17:30:49] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:49] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:49] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:49] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:48] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:48] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:48] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:48] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:48] \"POST /register HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/register","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: add
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:30:49.994+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: rajada de POST /register do mesmo IP (possivel botnet)
+parameters.alert.rule.id: 100211
+parameters.alert.rule.frequency: 10
+parameters.alert.rule.firedtimes: 3
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_botnet"]
+parameters.alert.agent.id: 001
+parameters.alert.agent.name: registry-pt-aveiro-dc1-r01-n01
+parameters.alert.agent.ip: 10.255.255.216
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794763849.33879
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /register
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794763859.39707: - ssle,ssle_dos,
+2026 Nov 15 17:30:59 (ingestion-pt-aveiro-dc1-r01-n02) any->/var/log/ssle/access.log
+Rule: 100201 (level 10) -> 'SSLE: flood de POST /ingest do mesmo IP (possivel DoS)'
+Src IP: 10.255.255.48
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+method: POST
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+
+** Alert 1794763861.40808: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:31:01 (ingestion-pt-aveiro-dc1-r01-n02) any->/var/ossec/logs/active-responses.log
+Rule: 651 (level 3) -> 'Host Blocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:30:59 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"add","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:30:59.903+0000","rule":{"level":10,"description":"SSLE: flood de POST /ingest do mesmo IP (possivel DoS)","id":"100201","frequency":100,"firedtimes":2,"mail":false,"groups":["ssle","ssle_dos"]},"agent":{"id":"002","name":"ingestion-pt-aveiro-dc1-r01-n02","ip":"10.255.255.215"},"manager":{"name":"wazuh-container"},"id":"1794763859.39707","previous_output":"10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/ingest","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: add
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:30:59.903+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: flood de POST /ingest do mesmo IP (possivel DoS)
+parameters.alert.rule.id: 100201
+parameters.alert.rule.frequency: 100
+parameters.alert.rule.firedtimes: 2
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_dos"]
+parameters.alert.agent.id: 002
+parameters.alert.agent.name: ingestion-pt-aveiro-dc1-r01-n02
+parameters.alert.agent.ip: 10.255.255.215
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794763859.39707
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /ingest
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794763911.44526: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:31:51 (registry-pt-aveiro-dc1-r01-n01) any->/var/ossec/logs/active-responses.log
+Rule: 652 (level 3) -> 'Host Unblocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:31:51 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"delete","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:30:49.994+0000","rule":{"level":10,"description":"SSLE: rajada de POST /register do mesmo IP (possivel botnet)","id":"100211","frequency":10,"firedtimes":3,"mail":false,"groups":["ssle","ssle_botnet"]},"agent":{"id":"001","name":"registry-pt-aveiro-dc1-r01-n01","ip":"10.255.255.216"},"manager":{"name":"wazuh-container"},"id":"1794763849.33879","previous_output":"10.255.255.48 - - [15/Nov/2026 17:30:49] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:49] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:49] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:49] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:48] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:48] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:48] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:48] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:48] \"POST /register HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/register","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: delete
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:30:49.994+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: rajada de POST /register do mesmo IP (possivel botnet)
+parameters.alert.rule.id: 100211
+parameters.alert.rule.frequency: 10
+parameters.alert.rule.firedtimes: 3
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_botnet"]
+parameters.alert.agent.id: 001
+parameters.alert.agent.name: registry-pt-aveiro-dc1-r01-n01
+parameters.alert.agent.ip: 10.255.255.216
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794763849.33879
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:49] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:48] "POST /register HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /register
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794763921.48015: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:32:01 (ingestion-pt-aveiro-dc1-r01-n02) any->/var/ossec/logs/active-responses.log
+Rule: 652 (level 3) -> 'Host Unblocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:32:00 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"delete","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:30:59.903+0000","rule":{"level":10,"description":"SSLE: flood de POST /ingest do mesmo IP (possivel DoS)","id":"100201","frequency":100,"firedtimes":2,"mail":false,"groups":["ssle","ssle_dos"]},"agent":{"id":"002","name":"ingestion-pt-aveiro-dc1-r01-n02","ip":"10.255.255.215"},"manager":{"name":"wazuh-container"},"id":"1794763859.39707","previous_output":"10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:30:58] \"POST /ingest HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/ingest","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: delete
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:30:59.903+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: flood de POST /ingest do mesmo IP (possivel DoS)
+parameters.alert.rule.id: 100201
+parameters.alert.rule.frequency: 100
+parameters.alert.rule.firedtimes: 2
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_dos"]
+parameters.alert.agent.id: 002
+parameters.alert.agent.name: ingestion-pt-aveiro-dc1-r01-n02
+parameters.alert.agent.ip: 10.255.255.215
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794763859.39707
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:30:58] "POST /ingest HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /ingest
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794764088.51741: mail  - ssle,ssle_hijack,
+2026 Nov 15 17:34:48 (registry-pt-aveiro-dc1-r01-n01) any->/var/log/ssle/access.log
+Rule: 100220 (level 12) -> 'SSLE: service_id storage-pt-aveiro-dc1-r02-n01 redirecionado para http://malicious-node.incus:6666 por 10.255.255.48'
+Src IP: 10.255.255.48
+REGISTRY_OVERWRITE service_id=storage-pt-aveiro-dc1-r02-n01 src_ip=10.255.255.48 old_url=http://storage-pt-aveiro-dc1-r02-n01.incus:5002 new_url=http://malicious-node.incus:6666
+service_id: storage-pt-aveiro-dc1-r02-n01
+old_url: http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+new_url: http://malicious-node.incus:6666
+
+** Alert 1794764116.52366: - ossec,pci_dss_10.2.7,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AU.6,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 17:35:16 (ingestion-pt-aveiro-dc1-r01-n02) any->netstat listening ports
+Rule: 533 (level 7) -> 'Listened ports status (netstat) changed (new port opened or closed).'
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 10.255.255.215:68 0.0.0.0:* 165/systemd-network
+tcp 0.0.0.0:5001 0.0.0.0:* 6174/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+tcp6 :::5355 :::* 150/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+udp6 :::5355 :::* 150/systemd-resolve
+Previous output:
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 10.255.255.215:68 0.0.0.0:* 165/systemd-network
+tcp 0.0.0.0:5001 0.0.0.0:* 5714/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+tcp6 :::5355 :::* 150/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+udp6 :::5355 :::* 150/systemd-resolve
+
+** Alert 1794764124.53727: - ossec,pci_dss_10.2.7,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AU.6,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 17:35:24 (registry-pt-aveiro-dc1-r01-n01) any->netstat listening ports
+Rule: 533 (level 7) -> 'Listened ports status (netstat) changed (new port opened or closed).'
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 10.255.255.216:68 0.0.0.0:* 161/systemd-network
+tcp 0.0.0.0:5050 0.0.0.0:* 15263/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+tcp6 :::5355 :::* 139/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+udp6 :::5355 :::* 139/systemd-resolve
+Previous output:
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 10.255.255.216:68 0.0.0.0:* 161/systemd-network
+tcp 0.0.0.0:5050 0.0.0.0:* 14528/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+tcp6 :::5355 :::* 139/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+udp6 :::5355 :::* 139/systemd-resolve
+
+** Alert 1794764616.55089: - ssle,ssle_botnet,
+2026 Nov 15 17:43:36 (registry-pt-aveiro-dc1-r01-n01) any->/var/log/ssle/access.log
+Rule: 100211 (level 10) -> 'SSLE: rajada de POST /register do mesmo IP (possivel botnet)'
+Src IP: 10.255.255.48
+10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+method: POST
+10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+
+** Alert 1794764616.56076: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:43:36 (registry-pt-aveiro-dc1-r01-n01) any->/var/ossec/logs/active-responses.log
+Rule: 651 (level 3) -> 'Host Blocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:43:36 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"add","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:43:36.474+0000","rule":{"level":10,"description":"SSLE: rajada de POST /register do mesmo IP (possivel botnet)","id":"100211","frequency":10,"firedtimes":4,"mail":false,"groups":["ssle","ssle_botnet"]},"agent":{"id":"001","name":"registry-pt-aveiro-dc1-r01-n01","ip":"10.255.255.216"},"manager":{"name":"wazuh-container"},"id":"1794764616.55089","previous_output":"10.255.255.48 - - [15/Nov/2026 17:43:35] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:35] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:35] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:35] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:34] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:34] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:34] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:34] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:34] \"POST /register HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/register","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: add
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:43:36.474+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: rajada de POST /register do mesmo IP (possivel botnet)
+parameters.alert.rule.id: 100211
+parameters.alert.rule.frequency: 10
+parameters.alert.rule.firedtimes: 4
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_botnet"]
+parameters.alert.agent.id: 001
+parameters.alert.agent.name: registry-pt-aveiro-dc1-r01-n01
+parameters.alert.agent.ip: 10.255.255.216
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794764616.55089
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /register
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794764620.59557: - ssle,ssle_dos,
+2026 Nov 15 17:43:40 (ingestion-pt-aveiro-dc1-r01-n02) any->/var/log/ssle/access.log
+Rule: 100201 (level 10) -> 'SSLE: flood de POST /ingest do mesmo IP (possivel DoS)'
+Src IP: 10.255.255.48
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+method: POST
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:39] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:39] "POST /ingest HTTP/1.1" 200 -
+
+** Alert 1794764622.60658: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:43:42 (ingestion-pt-aveiro-dc1-r01-n02) any->/var/ossec/logs/active-responses.log
+Rule: 651 (level 3) -> 'Host Blocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:43:40 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"add","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:43:40.523+0000","rule":{"level":10,"description":"SSLE: flood de POST /ingest do mesmo IP (possivel DoS)","id":"100201","frequency":100,"firedtimes":3,"mail":false,"groups":["ssle","ssle_dos"]},"agent":{"id":"002","name":"ingestion-pt-aveiro-dc1-r01-n02","ip":"10.255.255.215"},"manager":{"name":"wazuh-container"},"id":"1794764620.59557","previous_output":"10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:39] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:39] \"POST /ingest HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/ingest","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: add
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:43:40.523+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: flood de POST /ingest do mesmo IP (possivel DoS)
+parameters.alert.rule.id: 100201
+parameters.alert.rule.frequency: 100
+parameters.alert.rule.firedtimes: 3
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_dos"]
+parameters.alert.agent.id: 002
+parameters.alert.agent.name: ingestion-pt-aveiro-dc1-r01-n02
+parameters.alert.agent.ip: 10.255.255.215
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794764620.59557
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:39] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:39] "POST /ingest HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /ingest
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794764678.64376: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:44:38 (registry-pt-aveiro-dc1-r01-n01) any->/var/ossec/logs/active-responses.log
+Rule: 652 (level 3) -> 'Host Unblocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:44:37 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"delete","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:43:36.474+0000","rule":{"level":10,"description":"SSLE: rajada de POST /register do mesmo IP (possivel botnet)","id":"100211","frequency":10,"firedtimes":4,"mail":false,"groups":["ssle","ssle_botnet"]},"agent":{"id":"001","name":"registry-pt-aveiro-dc1-r01-n01","ip":"10.255.255.216"},"manager":{"name":"wazuh-container"},"id":"1794764616.55089","previous_output":"10.255.255.48 - - [15/Nov/2026 17:43:35] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:35] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:35] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:35] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:34] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:34] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:34] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:34] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:34] \"POST /register HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/register","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: delete
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:43:36.474+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: rajada de POST /register do mesmo IP (possivel botnet)
+parameters.alert.rule.id: 100211
+parameters.alert.rule.frequency: 10
+parameters.alert.rule.firedtimes: 4
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_botnet"]
+parameters.alert.agent.id: 001
+parameters.alert.agent.name: registry-pt-aveiro-dc1-r01-n01
+parameters.alert.agent.ip: 10.255.255.216
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794764616.55089
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:35] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:34] "POST /register HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /register
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794764682.67865: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:44:42 (ingestion-pt-aveiro-dc1-r01-n02) any->/var/ossec/logs/active-responses.log
+Rule: 652 (level 3) -> 'Host Unblocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:44:41 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"delete","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:43:40.523+0000","rule":{"level":10,"description":"SSLE: flood de POST /ingest do mesmo IP (possivel DoS)","id":"100201","frequency":100,"firedtimes":3,"mail":false,"groups":["ssle","ssle_dos"]},"agent":{"id":"002","name":"ingestion-pt-aveiro-dc1-r01-n02","ip":"10.255.255.215"},"manager":{"name":"wazuh-container"},"id":"1794764620.59557","previous_output":"10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:39] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:43:39] \"POST /ingest HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/ingest","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: delete
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:43:40.523+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: flood de POST /ingest do mesmo IP (possivel DoS)
+parameters.alert.rule.id: 100201
+parameters.alert.rule.frequency: 100
+parameters.alert.rule.firedtimes: 3
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_dos"]
+parameters.alert.agent.id: 002
+parameters.alert.agent.name: ingestion-pt-aveiro-dc1-r01-n02
+parameters.alert.agent.ip: 10.255.255.215
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794764620.59557
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:39] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:43:39] "POST /ingest HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /ingest
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794764836.71591: - ossec,pci_dss_10.2.7,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AU.6,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 17:47:16 (ingestion-pt-aveiro-dc1-r01-n02) any->netstat listening ports
+Rule: 533 (level 7) -> 'Listened ports status (netstat) changed (new port opened or closed).'
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 10.255.255.215:68 0.0.0.0:* 165/systemd-network
+tcp 0.0.0.0:5001 0.0.0.0:* 6511/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+tcp6 :::5355 :::* 150/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+udp6 :::5355 :::* 150/systemd-resolve
+Previous output:
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 10.255.255.215:68 0.0.0.0:* 165/systemd-network
+tcp 0.0.0.0:5001 0.0.0.0:* 6174/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+tcp6 :::5355 :::* 150/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+udp6 :::5355 :::* 150/systemd-resolve
+
+** Alert 1794764844.72952: - ossec,pci_dss_10.2.7,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AU.6,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 17:47:24 (registry-pt-aveiro-dc1-r01-n01) any->netstat listening ports
+Rule: 533 (level 7) -> 'Listened ports status (netstat) changed (new port opened or closed).'
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 10.255.255.216:68 0.0.0.0:* 161/systemd-network
+tcp 0.0.0.0:5050 0.0.0.0:* 16314/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+tcp6 :::5355 :::* 139/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+udp6 :::5355 :::* 139/systemd-resolve
+Previous output:
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 10.255.255.216:68 0.0.0.0:* 161/systemd-network
+tcp 0.0.0.0:5050 0.0.0.0:* 15263/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+tcp6 :::5355 :::* 139/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+udp6 :::5355 :::* 139/systemd-resolve
+
+** Alert 1794764852.74314: - ssle,ssle_botnet,
+2026 Nov 15 17:47:32 (registry-pt-aveiro-dc1-r01-n01) any->/var/log/ssle/access.log
+Rule: 100211 (level 10) -> 'SSLE: rajada de POST /register do mesmo IP (possivel botnet)'
+Src IP: 10.255.255.48
+10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+method: POST
+10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+
+** Alert 1794764854.75301: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:47:34 (registry-pt-aveiro-dc1-r01-n01) any->/var/ossec/logs/active-responses.log
+Rule: 651 (level 3) -> 'Host Blocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:47:32 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"add","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:47:32.649+0000","rule":{"level":10,"description":"SSLE: rajada de POST /register do mesmo IP (possivel botnet)","id":"100211","frequency":10,"firedtimes":5,"mail":false,"groups":["ssle","ssle_botnet"]},"agent":{"id":"001","name":"registry-pt-aveiro-dc1-r01-n01","ip":"10.255.255.216"},"manager":{"name":"wazuh-container"},"id":"1794764852.74314","previous_output":"10.255.255.48 - - [15/Nov/2026 17:47:32] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:32] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:32] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:32] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:31] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:31] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:31] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:31] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:31] \"POST /register HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/register","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: add
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:47:32.649+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: rajada de POST /register do mesmo IP (possivel botnet)
+parameters.alert.rule.id: 100211
+parameters.alert.rule.frequency: 10
+parameters.alert.rule.firedtimes: 5
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_botnet"]
+parameters.alert.agent.id: 001
+parameters.alert.agent.name: registry-pt-aveiro-dc1-r01-n01
+parameters.alert.agent.ip: 10.255.255.216
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794764852.74314
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /register
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794764862.78782: - ssle,ssle_dos,
+2026 Nov 15 17:47:42 (ingestion-pt-aveiro-dc1-r01-n02) any->/var/log/ssle/access.log
+Rule: 100201 (level 10) -> 'SSLE: flood de POST /ingest do mesmo IP (possivel DoS)'
+Src IP: 10.255.255.48
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+method: POST
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+
+** Alert 1794764862.79883: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:47:42 (ingestion-pt-aveiro-dc1-r01-n02) any->/var/ossec/logs/active-responses.log
+Rule: 651 (level 3) -> 'Host Blocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:47:42 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"add","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:47:42.606+0000","rule":{"level":10,"description":"SSLE: flood de POST /ingest do mesmo IP (possivel DoS)","id":"100201","frequency":100,"firedtimes":4,"mail":false,"groups":["ssle","ssle_dos"]},"agent":{"id":"002","name":"ingestion-pt-aveiro-dc1-r01-n02","ip":"10.255.255.215"},"manager":{"name":"wazuh-container"},"id":"1794764862.78782","previous_output":"10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/ingest","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: add
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:47:42.606+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: flood de POST /ingest do mesmo IP (possivel DoS)
+parameters.alert.rule.id: 100201
+parameters.alert.rule.frequency: 100
+parameters.alert.rule.firedtimes: 4
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_dos"]
+parameters.alert.agent.id: 002
+parameters.alert.agent.name: ingestion-pt-aveiro-dc1-r01-n02
+parameters.alert.agent.ip: 10.255.255.215
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794764862.78782
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /ingest
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794764914.83601: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:48:34 (registry-pt-aveiro-dc1-r01-n01) any->/var/ossec/logs/active-responses.log
+Rule: 652 (level 3) -> 'Host Unblocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:48:33 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"delete","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:47:32.649+0000","rule":{"level":10,"description":"SSLE: rajada de POST /register do mesmo IP (possivel botnet)","id":"100211","frequency":10,"firedtimes":5,"mail":false,"groups":["ssle","ssle_botnet"]},"agent":{"id":"001","name":"registry-pt-aveiro-dc1-r01-n01","ip":"10.255.255.216"},"manager":{"name":"wazuh-container"},"id":"1794764852.74314","previous_output":"10.255.255.48 - - [15/Nov/2026 17:47:32] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:32] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:32] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:32] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:31] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:31] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:31] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:31] \"POST /register HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:31] \"POST /register HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/register","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: delete
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:47:32.649+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: rajada de POST /register do mesmo IP (possivel botnet)
+parameters.alert.rule.id: 100211
+parameters.alert.rule.frequency: 10
+parameters.alert.rule.firedtimes: 5
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_botnet"]
+parameters.alert.agent.id: 001
+parameters.alert.agent.name: registry-pt-aveiro-dc1-r01-n01
+parameters.alert.agent.ip: 10.255.255.216
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794764852.74314
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:32] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:31] "POST /register HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /register
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794764924.87090: - ossec,active_response,pci_dss_11.4,gpg13_4.13,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC7.4,
+2026 Nov 15 17:48:44 (ingestion-pt-aveiro-dc1-r01-n02) any->/var/ossec/logs/active-responses.log
+Rule: 652 (level 3) -> 'Host Unblocked by firewall-drop Active Response'
+Src IP: 10.255.255.48
+2026/11/15 17:48:43 active-response/bin/firewall-drop: {"version":1,"origin":{"name":"node01","module":"wazuh-execd"},"command":"delete","parameters":{"extra_args":[],"alert":{"timestamp":"2026-11-15T17:47:42.606+0000","rule":{"level":10,"description":"SSLE: flood de POST /ingest do mesmo IP (possivel DoS)","id":"100201","frequency":100,"firedtimes":4,"mail":false,"groups":["ssle","ssle_dos"]},"agent":{"id":"002","name":"ingestion-pt-aveiro-dc1-r01-n02","ip":"10.255.255.215"},"manager":{"name":"wazuh-container"},"id":"1794764862.78782","previous_output":"10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -\n10.255.255.48 - - [15/Nov/2026 17:47:40] \"POST /ingest HTTP/1.1\" 200 -","decoder":{"name":"ssle-access"},"data":{"srcip":"10.255.255.48","status":"200","url":"/ingest","method":"POST"},"location":"/var/log/ssle/access.log"},"program":"active-response/bin/firewall-drop"}}
+version: 1
+origin.name: node01
+origin.module: wazuh-execd
+command: delete
+parameters.extra_args: []
+parameters.alert.timestamp: 2026-11-15T17:47:42.606+0000
+parameters.alert.rule.level: 10
+parameters.alert.rule.description: SSLE: flood de POST /ingest do mesmo IP (possivel DoS)
+parameters.alert.rule.id: 100201
+parameters.alert.rule.frequency: 100
+parameters.alert.rule.firedtimes: 4
+parameters.alert.rule.mail: false
+parameters.alert.rule.groups: ["ssle", "ssle_dos"]
+parameters.alert.agent.id: 002
+parameters.alert.agent.name: ingestion-pt-aveiro-dc1-r01-n02
+parameters.alert.agent.ip: 10.255.255.215
+parameters.alert.manager.name: wazuh-container
+parameters.alert.id: 1794764862.78782
+parameters.alert.previous_output: 10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+10.255.255.48 - - [15/Nov/2026 17:47:40] "POST /ingest HTTP/1.1" 200 -
+parameters.alert.decoder.name: ssle-access
+parameters.alert.data.srcip: 10.255.255.48
+parameters.alert.data.status: 200
+parameters.alert.data.url: /ingest
+parameters.alert.data.method: POST
+parameters.alert.location: /var/log/ssle/access.log
+parameters.program: active-response/bin/firewall-drop
+
+** Alert 1794765088.90816: mail  - ssle,ssle_hijack,
+2026 Nov 15 17:51:28 (registry-pt-aveiro-dc1-r01-n01) any->/var/log/ssle/access.log
+Rule: 100220 (level 12) -> 'SSLE: service_id storage-pt-aveiro-dc1-r02-n01 redirecionado para http://malicious-node.incus:6666 por 10.255.255.48'
+Src IP: 10.255.255.48
+REGISTRY_OVERWRITE service_id=storage-pt-aveiro-dc1-r02-n01 src_ip=10.255.255.48 old_url=http://storage-pt-aveiro-dc1-r02-n01.incus:5002 new_url=http://malicious-node.incus:6666
+service_id: storage-pt-aveiro-dc1-r02-n01
+old_url: http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+new_url: http://malicious-node.incus:6666
+
+** Alert 1794765196.91441: - ossec,pci_dss_10.2.7,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AU.6,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 17:53:16 (ingestion-pt-aveiro-dc1-r01-n02) any->netstat listening ports
+Rule: 533 (level 7) -> 'Listened ports status (netstat) changed (new port opened or closed).'
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 10.255.255.215:68 0.0.0.0:* 165/systemd-network
+tcp 0.0.0.0:5001 0.0.0.0:* 6746/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+tcp6 :::5355 :::* 150/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+udp6 :::5355 :::* 150/systemd-resolve
+Previous output:
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 10.255.255.215:68 0.0.0.0:* 165/systemd-network
+tcp 0.0.0.0:5001 0.0.0.0:* 6511/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+tcp6 :::5355 :::* 150/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+udp6 :::5355 :::* 150/systemd-resolve
+
+** Alert 1794765204.92802: - ossec,pci_dss_10.2.7,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AU.6,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 17:53:24 (registry-pt-aveiro-dc1-r01-n01) any->netstat listening ports
+Rule: 533 (level 7) -> 'Listened ports status (netstat) changed (new port opened or closed).'
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 10.255.255.216:68 0.0.0.0:* 161/systemd-network
+tcp 0.0.0.0:5050 0.0.0.0:* 16680/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+tcp6 :::5355 :::* 139/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+udp6 :::5355 :::* 139/systemd-resolve
+Previous output:
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 10.255.255.216:68 0.0.0.0:* 161/systemd-network
+tcp 0.0.0.0:5050 0.0.0.0:* 16314/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+tcp6 :::5355 :::* 139/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+udp6 :::5355 :::* 139/systemd-resolve
+
+** Alert 1794765326.94164: mail  - ssle,ssle_hijack,
+2026 Nov 15 17:55:26 (registry-pt-aveiro-dc1-r01-n01) any->/var/log/ssle/access.log
+Rule: 100220 (level 12) -> 'SSLE: service_id storage-pt-aveiro-dc1-r02-n01 redirecionado para http://malicious-node.incus:6666 por 10.255.255.48'
+Src IP: 10.255.255.48
+REGISTRY_OVERWRITE service_id=storage-pt-aveiro-dc1-r02-n01 src_ip=10.255.255.48 old_url=http://storage-pt-aveiro-dc1-r02-n01.incus:5002 new_url=http://malicious-node.incus:6666
+service_id: storage-pt-aveiro-dc1-r02-n01
+old_url: http://storage-pt-aveiro-dc1-r02-n01.incus:5002
+new_url: http://malicious-node.incus:6666
+
+** Alert 1794765556.94789: - ossec,pci_dss_10.2.7,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AU.6,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 17:59:16 (ingestion-pt-aveiro-dc1-r01-n02) any->netstat listening ports
+Rule: 533 (level 7) -> 'Listened ports status (netstat) changed (new port opened or closed).'
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 10.255.255.215:68 0.0.0.0:* 165/systemd-network
+tcp 0.0.0.0:5001 0.0.0.0:* 6876/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+tcp6 :::5355 :::* 150/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+udp6 :::5355 :::* 150/systemd-resolve
+Previous output:
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 150/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 150/systemd-resolve
+udp 10.255.255.215:68 0.0.0.0:* 165/systemd-network
+tcp 0.0.0.0:5001 0.0.0.0:* 6746/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+tcp6 :::5355 :::* 150/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 150/systemd-resolve
+udp6 :::5355 :::* 150/systemd-resolve
+
+** Alert 1794765564.96150: - ossec,pci_dss_10.2.7,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AU.6,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,
+2026 Nov 15 17:59:24 (registry-pt-aveiro-dc1-r01-n01) any->netstat listening ports
+Rule: 533 (level 7) -> 'Listened ports status (netstat) changed (new port opened or closed).'
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 10.255.255.216:68 0.0.0.0:* 161/systemd-network
+tcp 0.0.0.0:5050 0.0.0.0:* 17338/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+tcp6 :::5355 :::* 139/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+udp6 :::5355 :::* 139/systemd-resolve
+Previous output:
+ossec: output: 'netstat listening ports':
+tcp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+tcp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.53:53 0.0.0.0:* 139/systemd-resolve
+udp 127.0.0.54:53 0.0.0.0:* 139/systemd-resolve
+udp 10.255.255.216:68 0.0.0.0:* 161/systemd-network
+tcp 0.0.0.0:5050 0.0.0.0:* 16680/python3
+tcp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+tcp6 :::5355 :::* 139/systemd-resolve
+udp 0.0.0.0:5355 0.0.0.0:* 139/systemd-resolve
+udp6 :::5355 :::* 139/systemd-resolve
+
