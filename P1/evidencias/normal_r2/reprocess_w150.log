@@ -1,0 +1,26 @@
+=== TELEMETRIA SSLE [REPROC_TMP] janela=150s fim=2026-11-14T12:02:19+00:00 ===
+
+[+] Infraestrutura (Incus)...
+ -> registry-pt-aveiro-dc1-r01-n01: CPU media=0.40%, CPU max=0.49%, RAM media=106.17 MiB, RAM max=108.07 MiB
+ -> storage-pt-aveiro-dc1-r02-n01: CPU media=0.33%, CPU max=0.49%, RAM media=107.05 MiB, RAM max=107.34 MiB
+ -> ingestion-pt-aveiro-dc1-r01-n02: CPU media=0.37%, CPU max=0.53%, RAM media=104.76 MiB, RAM max=104.82 MiB
+ -> analytics-pt-aveiro-dc1-r02-n02: CPU media=0.18%, CPU max=1.04%, RAM media=105.73 MiB, RAM max=105.86 MiB
+
+[+] RED por servico...
+ -> registry-pt-aveiro-dc1-r01-n01: RPS=1.356, Erros/s=0.000, p95=0.0047s, pedidos=203
+ -> storage-pt-aveiro-dc1-r02-n01: RPS=0.452, Erros/s=0.000, p95=0.0952s, pedidos=68
+ -> ingestion-pt-aveiro-dc1-r01-n02: RPS=0.452, Erros/s=0.000, p95=0.0955s, pedidos=68
+ -> analytics-pt-aveiro-dc1-r02-n02: RPS=0.067, Erros/s=0.000, p95=0.0047s, pedidos=10
+ -> Payload p95 (Ingestion): 95.00 bytes
+
+[+] /ingest no Ingestion...
+ -> pedidos=58, 2xx=58, 5xx=0, pico RPS (suavizado 45 s)=0.40
+
+[+] Negocio...
+ -> POST /register no Registry: 0
+ -> Registos de sensores (janela): 0
+ -> Dispositivos unicos (Storage, max): 2
+ -> Registry overwrites (max): 0
+ -> Entradas storage-service: 1 | ingestion-service: 1
+
+[INFO] Relatorio guardado em 'ssle_report_reproc_tmp.json' (data_ok=True)
