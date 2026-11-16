@@ -2,13 +2,13 @@
 """
 graficos.py - gera PNGs (e CSVs com os dados brutos) a partir do Prometheus
 para cada corrida de evidencias/, em graficos/<corrida>/<id>_<nome>.png
+Ou figuras compostas comparativas com --compor dos botnet hijack.
 
 Uso (na raiz de P1, com o venv ativo):
-  python3 monitoring/graficos.py --listar               # so mostra o que faria
-  python3 monitoring/graficos.py --only dos_r2          # uma corrida
-  python3 monitoring/graficos.py --only dos_r2 botnet_r2  # varias
-  python3 monitoring/graficos.py                        # todas as validas
-  python3 monitoring/graficos.py --rate 30s             # janela do rate()/increase()
+  python3 monitoring/graficos.py --listar                 # so mostra o what faria
+  python3 monitoring/graficos.py --only dos_r2            # uma corrida
+  python3 monitoring/graficos.py --compor dos botnet hijack # gera figuras compostas para o relatorio
+  python3 monitoring/graficos.py --rate 30s               # janela do rate()/increase()
 
 Janela do grafico: de (start - 60 s) ate (at + 30 s), step 15 s (= scrape).
 Linhas verticais: inicio/fim do ataque (meta.txt) e alertas Wazuh
@@ -167,12 +167,97 @@ def plot_one(qid, rate, t0, t1, meta_marks, alerts, outdir, name):
     return f"ok         {qid} {nome}: {len(res)} serie(s), {npts} pontos, max={vmax:.4g}"
 
 
+# --------------------------------------------------------------------
+# Figuras compostas para o relatorio: 3 colunas (baseline | ataque | Wazuh)
+# x 2 linhas (carga/comportamento e impacto), eixo Y PARTILHADO por linha
+# e eixo X em segundos desde o inicio da corrida (colunas comparaveis).
+# --------------------------------------------------------------------
+FIGS = {
+    "dos": (["normal_r2", "dos_r2", "dos_wazuh_ar_r2"], ["A1", "A4"],
+            ["Baseline (normal)", "Ataque sem mitigacao", "Ataque + Wazuh (bloqueio)"]),
+    "botnet": (["normal_r2", "botnet_r2", "botnet_wazuh_ar_ab_r2"], ["B1", "B6"],
+               ["Baseline (normal)", "Ataque sem mitigacao", "Ataque + Wazuh (bloqueio A+B)"]),
+    "hijack": (["normal_r2", "hijack_r2", "hijack_wazuh_r2"], ["C1", "C3"],
+               ["Baseline (normal)", "Ataque sem Wazuh", "Ataque + Wazuh (so deteccao, sem bloqueio)"]),
+}
+
+
+def run_times(name):
+    meta = read_meta(os.path.join("evidencias", name))
+    if not meta or "start" not in meta:
+        raise SystemExit(f"[ERRO] evidencias/{name}/meta.txt em falta ou sem start")
+    tipo = name.split("_")[0]
+    start = parse_ts(meta["start"])
+    at = float(meta["at_epoch"]) if "at_epoch" in meta else start + OFFSET[tipo]
+    end = parse_ts(meta["end"]) if "end" in meta else None
+    return tipo, start, at, end
+
+
+def compor(tipo, rate):
+    cols, rows, titles = FIGS[tipo]
+    alerts = load_alerts()
+    xmax = OFFSET[tipo] + PAD_AFTER
+    fig, axes = plt.subplots(len(rows), len(cols), figsize=(15, 3.8 * len(rows)),
+                             sharey="row", squeeze=False)
+    colors, handles = {}, {}
+    for j, name in enumerate(cols):
+        ctipo, start, at, end = run_times(name)
+        t0, t1 = start - PAD_BEFORE, at + PAD_AFTER
+        for i, qid in enumerate(rows):
+            ax = axes[i][j]
+            _, titulo, tmpl, div, ylab = Q[qid]
+            for s in query_range(tmpl.replace("{R}", rate), t0, t1):
+                lab = label_of(s["metric"])
+                col = colors.setdefault(lab, f"C{len(colors) % 10}")
+                xs = [float(t) - start for t, _ in s["values"]]
+                ys = [float(v) / div if v not in ("NaN", "+Inf", "-Inf") else float("nan")
+                      for _, v in s["values"]]
+                h, = ax.plot(xs, ys, marker=".", color=col, label=lab)
+                handles.setdefault(lab, h)
+            if ctipo != "normal":
+                ax.axvline(0, color="gray", linestyle="--", linewidth=1)
+                if end is not None and end - start > 2:
+                    ax.axvline(end - start, color="gray", linestyle="--", linewidth=1)
+                for t, rid, ag in alerts:
+                    if t0 <= t <= t1:
+                        ax.axvline(t - start, color=ALERT_IDS[rid], linestyle=":", linewidth=1.4)
+                        if i == 0:
+                            ax.text(t - start, 1.0, ALERT_TXT[rid], transform=ax.get_xaxis_transform(),
+                                    rotation=90, va="top", ha="right", fontsize=7, color=ALERT_IDS[rid])
+            ax.set_xlim(-PAD_BEFORE, xmax)
+            ax.grid(alpha=0.3)
+            if i == 0:
+                ax.set_title(f"{titles[j]}\n({name})", fontsize=10)
+            if j == 0:
+                ax.set_ylabel(f"{titulo}\n[{ylab}]", fontsize=8)
+            if i == len(rows) - 1:
+                ax.set_xlabel("segundos desde o inicio da corrida (UTC)")
+    if handles:
+        fig.legend(handles.values(), handles.keys(), loc="lower right", fontsize=8, ncol=len(handles))
+    fig.text(0.01, 0.005,
+             f"Prometheus: janela [{rate}], scrape 15 s (rate/increase sao estimativas). "
+             "Contagens exatas: evidencias/_verificacao.txt. Linhas tracejadas: inicio/fim do ataque; "
+             "pontilhadas: alertas Wazuh.", fontsize=7)
+    fig.tight_layout(rect=(0, 0.03, 1, 1))
+    out = os.path.join("graficos", "_figuras", f"{tipo}_{rate}.png")
+    fig.savefig(out, dpi=140)
+    plt.close(fig)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", nargs="*")
     ap.add_argument("--rate", default="1m")
     ap.add_argument("--listar", action="store_true")
+    ap.add_argument("--compor", nargs="+", choices=list(FIGS),
+                    help="gera a figura composta (baseline|ataque|Wazuh) por ameaca")
     a = ap.parse_args()
+    if a.compor:
+        os.makedirs(os.path.join("graficos", "_figuras"), exist_ok=True)
+        for tipo in a.compor:
+            print("[ok]", compor(tipo, a.rate))
+        return
 
     dirs = sorted(d for d in glob.glob("evidencias/*/") if not os.path.basename(d.rstrip("/")).startswith("_"))
     alerts = load_alerts()

@@ -1,0 +1,25 @@
+corrida                    env reg/ing ConnTO | .48 reg/ing | ing log ing prom    d% | reg log reg prom | 5xx log/prom | flags
+------------------------------------------------------------------------------------------------------------------------------
+botnet_r1                       30/150      0 |       0/150 |     186      211   +14 |       0       35 |          0/0 | SEM_LOG
+botnet_r2                       30/150      0 |      30/150 |     186      207   +12 |      30       36 |          0/0 | PROM_ING PROM_REG
+botnet_wazuh_ar_a_r1            30/150     25 |      30/125 |     161      170    +5 |      30       36 |          0/0 | PROM_REG
+botnet_wazuh_ar_ab_r1           30/150     40 |      15/125 |     161      171    +6 |      15       18 |          0/0 | 
+botnet_wazuh_ar_ab_r2           30/150     65 |      15/100 |     134      140    +4 |      15       18 |          0/0 | 
+botnet_wazuh_ar_ab_r3           30/150     70 |      10/100 |     136      144    +6 |      10       12 |          0/0 | 
+botnet_wazuh_test               30/150      0 |      30/150 |     184      216   +17 |      30       36 |          0/0 | PROM_ING PROM_REG
+dos_r1                          -/3000      0 |      0/3000 |    3058     3207    +5 |       0        0 |        76/57 | SEM_LOG
+dos_r2                          -/3000      0 |      0/3000 |    3058     3182    +4 |       0        0 |        53/51 | 
+dos_wazuh_ar_r1                 -/1113    749 |       0/364 |     423      459    +9 |       0        0 |          0/0 | 
+dos_wazuh_ar_r2                 -/1048    750 |       0/298 |     357      382    +7 |       0        0 |          0/0 | 
+dos_wazuh_ar_r3                 -/1107    750 |       0/357 |     417      436    +5 |       0        0 |          0/0 | 
+dos_wazuh_test                  -/3000      0 |      0/3000 |    3058     3190    +4 |       0        0 |        66/44 | 
+hijack_r1                        -/  -      0 |         0/0 |      22       12   -47 |       0        1 |         14/9 | SEM_LOG
+hijack_r2                        -/  -      0 |         1/0 |      22       17   -23 |       1        1 |        14/12 | PROM_ING
+hijack_wazuh_corr_r1             -/  -      0 |         1/0 |      22       13   -41 |       1        1 |         14/6 | PROM_ING
+hijack_wazuh_r1                  -/  -      0 |         1/0 |      22       17   -22 |       1        1 |         14/7 | 
+hijack_wazuh_r2                  -/  -      0 |         1/0 |      22       16   -29 |       1        1 |         14/7 | PROM_ING
+hijack_wazuh_r3                  -/  -      0 |         1/0 |      24       16   -31 |       1        1 |         13/7 | PROM_ING
+normal_r1                            -      - |         0/0 |      60       60    +0 |       0        0 |          0/0 | SEM_LOG
+normal_r2                            -      - |         0/0 |      59       58    -2 |       0        0 |          0/0 | 
+normal_r3                            -      - |         0/0 |      58       55    -5 |       0        0 |          0/0 | 
+normal_wazuh_r1                      -      - |         0/0 |      59       58    -1 |       0        0 |          0/0 | 
