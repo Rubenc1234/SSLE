@@ -2,12 +2,12 @@
 """
 graficos.py - gera PNGs (e CSVs com os dados brutos) a partir do Prometheus
 para cada corrida de evidencias/, em graficos/<corrida>/<id>_<nome>.png
-Ou figuras compostas comparativas com --compor dos botnet hijack.
 
 Uso (na raiz de P1, com o venv ativo):
-  python3 monitoring/graficos.py --listar                 # so mostra o what faria
+  python3 monitoring/graficos.py --listar               # so mostra o que faria
   python3 monitoring/graficos.py --only dos_r2            # uma corrida
-  python3 monitoring/graficos.py --compor dos botnet hijack # gera figuras compostas para o relatorio
+  python3 monitoring/graficos.py --only dos_r2 botnet_r2  # varias
+  python3 monitoring/graficos.py                          # todas as validas
   python3 monitoring/graficos.py --rate 30s               # janela do rate()/increase()
 
 Janela do grafico: de (start - 60 s) ate (at + 30 s), step 15 s (= scrape).
@@ -109,6 +109,8 @@ def load_alerts():
 
 
 def label_of(metric):
+    if "container" in metric:                      # metricas do Incus: so o nome curto
+        return metric["container"].split("-")[0]
     parts = [f"{k}={v}" for k, v in metric.items() if k not in ("__name__", "job")]
     return ", ".join(parts) if parts else "total"
 
@@ -174,11 +176,11 @@ def plot_one(qid, rate, t0, t1, meta_marks, alerts, outdir, name):
 # --------------------------------------------------------------------
 FIGS = {
     "dos": (["normal_r2", "dos_r2", "dos_wazuh_ar_r2"], ["A1", "A4"],
-            ["Baseline (normal)", "Ataque sem mitigacao", "Ataque + Wazuh (bloqueio)"]),
-    "botnet": (["normal_r2", "botnet_r2", "botnet_wazuh_ar_ab_r2"], ["B1", "B6"],
-               ["Baseline (normal)", "Ataque sem mitigacao", "Ataque + Wazuh (bloqueio A+B)"]),
+            ["Baseline (normal)", "Ataque sem mitigação (sem Wazuh)", "Ataque + Wazuh (bloqueio)"]),
+    "botnet": (["normal_r2", "botnet_r2", "botnet_wazuh_ar_ab_r3"], ["B2", "B6"],
+               ["Baseline (normal)", "Ataque sem mitigação (sem Wazuh)", "Ataque + Wazuh (bloqueio A+B)"]),
     "hijack": (["normal_r2", "hijack_r2", "hijack_wazuh_r2"], ["C1", "C3"],
-               ["Baseline (normal)", "Ataque sem Wazuh", "Ataque + Wazuh (so deteccao, sem bloqueio)"]),
+               ["Baseline (normal)", "Ataque sem mitigação (sem Wazuh)", "Ataque + Wazuh (só deteção, sem bloqueio)"]),
 }
 
 
@@ -193,21 +195,25 @@ def run_times(name):
     return tipo, start, at, end
 
 
-def compor(tipo, rate):
+def compor(tipo, rate, sem5xx=False):
     cols, rows, titles = FIGS[tipo]
     alerts = load_alerts()
     xmax = OFFSET[tipo] + PAD_AFTER
-    fig, axes = plt.subplots(len(rows), len(cols), figsize=(15, 3.8 * len(rows)),
+    fig, axes = plt.subplots(len(rows), len(cols), figsize=(15, 3.8 * len(rows) + 1.8),
                              sharey="row", squeeze=False)
-    colors, handles = {}, {}
+    colors, handles, legends = {}, {}, []
     for j, name in enumerate(cols):
         ctipo, start, at, end = run_times(name)
         t0, t1 = start - PAD_BEFORE, at + PAD_AFTER
+        col_alerts = [a_ for a_ in alerts if t0 <= a_[0] <= t1] if ctipo != "normal" else []
+        legends.append((j, start, col_alerts))
         for i, qid in enumerate(rows):
             ax = axes[i][j]
             _, titulo, tmpl, div, ylab = Q[qid]
             for s in query_range(tmpl.replace("{R}", rate), t0, t1):
                 lab = label_of(s["metric"])
+                if sem5xx and lab.startswith("status=5"):    # omite os 5xx do Prometheus (ver log)
+                    continue
                 col = colors.setdefault(lab, f"C{len(colors) % 10}")
                 xs = [float(t) - start for t, _ in s["values"]]
                 ys = [float(v) / div if v not in ("NaN", "+Inf", "-Inf") else float("nan")
@@ -218,28 +224,43 @@ def compor(tipo, rate):
                 ax.axvline(0, color="gray", linestyle="--", linewidth=1)
                 if end is not None and end - start > 2:
                     ax.axvline(end - start, color="gray", linestyle="--", linewidth=1)
-                for t, rid, ag in alerts:
-                    if t0 <= t <= t1:
-                        ax.axvline(t - start, color=ALERT_IDS[rid], linestyle=":", linewidth=1.4)
-                        if i == 0:
-                            ax.text(t - start, 1.0, ALERT_TXT[rid], transform=ax.get_xaxis_transform(),
-                                    rotation=90, va="top", ha="right", fontsize=7, color=ALERT_IDS[rid])
+                for n, (t, rid, ag) in enumerate(col_alerts, 1):
+                    ax.axvline(t - start, color=ALERT_IDS[rid], linestyle=":", linewidth=1.4)
+                    if i == 0:   # circulo numerado por cima do eixo, em 3 alturas para nao sobrepor
+                        ax.text(t - start, 1.01 + 0.055 * (n % 3), str(n),
+                                transform=ax.get_xaxis_transform(), ha="center", va="bottom",
+                                fontsize=7, color="white", clip_on=False,
+                                bbox=dict(boxstyle="circle,pad=0.2", fc=ALERT_IDS[rid], ec="none"))
             ax.set_xlim(-PAD_BEFORE, xmax)
+            ax.axvspan(-PAD_BEFORE, -15, color="gray", alpha=0.12, lw=0)    # efeitos do reset (~-40 s)
+            if i == 0:   # etiqueta por cima da faixa, fora da area dos dados
+                ax.text(-PAD_BEFORE + 1, 1.01, "reset dos serviços (≈ -40 s)",
+                        transform=ax.get_xaxis_transform(), fontsize=6.5, color="gray", va="bottom")
             ax.grid(alpha=0.3)
             if i == 0:
-                ax.set_title(f"{titles[j]}\n({name})", fontsize=10)
+                ax.set_title(f"{titles[j]}\n({name})", fontsize=10, pad=30)
             if j == 0:
                 ax.set_ylabel(f"{titulo}\n[{ylab}]", fontsize=8)
             if i == len(rows) - 1:
                 ax.set_xlabel("segundos desde o inicio da corrida (UTC)")
-    if handles:
-        fig.legend(handles.values(), handles.keys(), loc="lower right", fontsize=8, ncol=len(handles))
+    if handles and not (len(handles) == 1 and "total" in handles):
+        fig.legend(handles.values(), handles.keys(), loc="upper center", fontsize=8,
+                   ncol=len(handles), bbox_to_anchor=(0.5, 1.0))
     fig.text(0.01, 0.005,
              f"Prometheus: janela [{rate}], scrape 15 s (rate/increase sao estimativas). "
-             "Contagens exatas: evidencias/_verificacao.txt. Linhas tracejadas: inicio/fim do ataque; "
-             "pontilhadas: alertas Wazuh.", fontsize=7)
-    fig.tight_layout(rect=(0, 0.03, 1, 1))
-    out = os.path.join("graficos", "_figuras", f"{tipo}_{rate}.png")
+             "Contagens exatas: evidencias/_verificacao.txt. Tracejadas: inicio/fim do ataque; "
+             "pontilhadas e circulos numerados: alertas Wazuh (legenda por baixo de cada coluna).",
+             fontsize=7)
+    fig.tight_layout(rect=(0, 0.2, 1, 0.95))
+    short = {"registry": "Reg.", "ingestion": "Ing."}
+    for j, start, col_alerts in legends:
+        if not col_alerts:
+            continue
+        pos = axes[-1][j].get_position()
+        txt = "\n".join(f"{n}: {t - start:+.0f} s  {ALERT_TXT[rid]} ({short.get(ag.split('-')[0], ag)})"
+                        for n, (t, rid, ag) in enumerate(col_alerts, 1))
+        fig.text(pos.x0, pos.y0 - 0.085, txt, va="top", fontsize=7)
+    out = os.path.join("graficos", "_figuras", f"{tipo}_{rate}{'_sem5xx' if sem5xx else ''}.png")
     fig.savefig(out, dpi=140)
     plt.close(fig)
     return out
@@ -252,11 +273,13 @@ def main():
     ap.add_argument("--listar", action="store_true")
     ap.add_argument("--compor", nargs="+", choices=list(FIGS),
                     help="gera a figura composta (baseline|ataque|Wazuh) por ameaca")
+    ap.add_argument("--sem-5xx", action="store_true",
+                    help="com --compor: nao desenha as series 5xx do Prometheus")
     a = ap.parse_args()
     if a.compor:
         os.makedirs(os.path.join("graficos", "_figuras"), exist_ok=True)
         for tipo in a.compor:
-            print("[ok]", compor(tipo, a.rate))
+            print("[ok]", compor(tipo, a.rate, a.sem_5xx))
         return
 
     dirs = sorted(d for d in glob.glob("evidencias/*/") if not os.path.basename(d.rstrip("/")).startswith("_"))
